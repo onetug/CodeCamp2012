@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>65477f99-1549-445d-8bc2-dc41e1c3c05a</ProjectGuid>
+    <ProjectGuid>{8E54DAE0-8A4C-432E-9CD8-141E39ECE0E7}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -53,6 +53,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ServiceContracts\CodeCampService.svc" />
     <Content Include="Service1.svc" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -63,6 +64,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ServiceContracts\CodeCampService.svc.cs">
+      <DependentUpon>CodeCampService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="DataContracts\SponsorDataContract.cs" />
+    <Compile Include="ServiceContracts\ICodeCampService.cs" />
+    <Compile Include="Models\Sponsor.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
@@ -80,7 +87,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>62256</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
