@@ -1,0 +1,17 @@
+What are we doing here?
+=======================
+This repository will house the source code for Orlando Code Camp 2012.  Teams have been created for this repository so if you are interested in participating contact z@onetug.org for more information on opportunities.
+
+How do I get started?
+=====================
+Once you have created your github account you'll need to setup your workstation to push and pull code to the repository.  The git extensions are available for VS2010 through the extensions manager.  If you don't remember the link for workstation setup you can find details here -->       
+
+If you are already a git user, you probably already know what to do.  If not, and you've completed the setup steps for your own account/repo you can open a git bash session and issue the following command:
+
+git clone git://github.com/onetug/CodeCamp2012.git
+
+Visual Studio extensions for Git are available on CodePlex: http://gitscc.codeplex.com/ and as a NuGet package. If you are using the Visual Studio extensions for Git you can clone the code camp repository from inside the IDE.
+
+There are other extensions available such as the web ui for visualizing the commit history.  It is available as a NuGet package.  http://gitweb.codeplex.com/
+
+
