@@ -8,11 +8,13 @@ using OCC.Service.Webhost.Models;
 
 namespace OCC.Service.Webhost
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "ICodeCampService" in both code and config file together.
     [ServiceContract]
     public interface ICodeCampService
     {
         [OperationContract]
         IList<Sponsor> GetAllSponsors();
+
+        [OperationContract]
+        IList<Announcement> GetAnnouncements();
     }
 }

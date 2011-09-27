@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCC.UI.Webhost", "OCC.UI.Webhost\OCC.UI.Webhost.csproj", "{13F0296A-F062-4CBA-9A5A-E15D3EB07499}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8E54DAE0-8A4C-432E-9CD8-141E39ECE0E7} = {8E54DAE0-8A4C-432E-9CD8-141E39ECE0E7}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCC.Service.Webhost", "OCC.Service.Webhost\OCC.Service.Webhost.csproj", "{8E54DAE0-8A4C-432E-9CD8-141E39ECE0E7}"
 EndProject

@@ -54,7 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ServiceContracts\CodeCampService.svc" />
-    <Content Include="Service1.svc" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -64,16 +63,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Announcement.cs" />
     <Compile Include="ServiceContracts\CodeCampService.svc.cs">
       <DependentUpon>CodeCampService.svc</DependentUpon>
     </Compile>
     <Compile Include="DataContracts\SponsorDataContract.cs" />
     <Compile Include="ServiceContracts\ICodeCampService.cs" />
     <Compile Include="Models\Sponsor.cs" />
-    <Compile Include="Service1.svc.cs">
-      <DependentUpon>Service1.svc</DependentUpon>
-    </Compile>
-    <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

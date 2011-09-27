@@ -1,8 +1,20 @@
-﻿@{
+﻿@model OCC.UI.Webhost.Models.HomeModel
+
+@{
     ViewBag.Title = "Home Page";
 }
 
 <h2>@ViewBag.Message</h2>
-<p>
-    To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-</p>
+
+<div class="column">
+
+@foreach (var announcement in ViewData.Model.Announcements)
+{
+    <div class="announcement">
+        <div class="announcement-title"><h3>@announcement.Title</h3></div>
+        <div class="announcement-subtitle"><i>@announcement.Subtitle</i></div>
+        <div class="announcement-contents">@announcement.Content</div>
+    </div>
+}
+
+</div>
