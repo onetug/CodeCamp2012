@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.ocpafl.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.ocpafl.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.ocpafl.org/">
+      <s:element name="ParcelAddresses">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefixText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParcelAddressesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ParcelAddressesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TPPAddresses">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefixText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TPPAddressesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TPPAddressesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewSearchBoxLookup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefixText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewSearchBoxLookupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewSearchBoxLookupResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParcelOwnerNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefixText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParcelOwnerNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ParcelOwnerNamesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParcelPropertyNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefixText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParcelPropertyNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ParcelPropertyNamesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParcelSubNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefixText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParcelSubNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ParcelSubNamesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TPPBusinessNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefixText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TPPBusinessNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TPPBusinessNamesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParcelStreetNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefixText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParcelStreetNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ParcelStreetNamesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TPPStreetNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="prefixText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TPPStreetNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TPPStreetNamesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ParcelAddressesSoapIn">
+    <wsdl:part name="parameters" element="tns:ParcelAddresses" />
+  </wsdl:message>
+  <wsdl:message name="ParcelAddressesSoapOut">
+    <wsdl:part name="parameters" element="tns:ParcelAddressesResponse" />
+  </wsdl:message>
+  <wsdl:message name="TPPAddressesSoapIn">
+    <wsdl:part name="parameters" element="tns:TPPAddresses" />
+  </wsdl:message>
+  <wsdl:message name="TPPAddressesSoapOut">
+    <wsdl:part name="parameters" element="tns:TPPAddressesResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewSearchBoxLookupSoapIn">
+    <wsdl:part name="parameters" element="tns:NewSearchBoxLookup" />
+  </wsdl:message>
+  <wsdl:message name="NewSearchBoxLookupSoapOut">
+    <wsdl:part name="parameters" element="tns:NewSearchBoxLookupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ParcelOwnerNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:ParcelOwnerNames" />
+  </wsdl:message>
+  <wsdl:message name="ParcelOwnerNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:ParcelOwnerNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ParcelPropertyNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:ParcelPropertyNames" />
+  </wsdl:message>
+  <wsdl:message name="ParcelPropertyNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:ParcelPropertyNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ParcelSubNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:ParcelSubNames" />
+  </wsdl:message>
+  <wsdl:message name="ParcelSubNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:ParcelSubNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="TPPBusinessNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:TPPBusinessNames" />
+  </wsdl:message>
+  <wsdl:message name="TPPBusinessNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:TPPBusinessNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ParcelStreetNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:ParcelStreetNames" />
+  </wsdl:message>
+  <wsdl:message name="ParcelStreetNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:ParcelStreetNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="TPPStreetNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:TPPStreetNames" />
+  </wsdl:message>
+  <wsdl:message name="TPPStreetNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:TPPStreetNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ParcelAddressesHttpGetIn">
+    <wsdl:part name="prefixText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ParcelAddressesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="TPPAddressesHttpGetIn">
+    <wsdl:part name="prefixText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TPPAddressesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="NewSearchBoxLookupHttpGetIn">
+    <wsdl:part name="prefixText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="NewSearchBoxLookupHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="ParcelOwnerNamesHttpGetIn">
+    <wsdl:part name="prefixText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ParcelOwnerNamesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="ParcelPropertyNamesHttpGetIn">
+    <wsdl:part name="prefixText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ParcelPropertyNamesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="ParcelSubNamesHttpGetIn">
+    <wsdl:part name="prefixText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ParcelSubNamesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="TPPBusinessNamesHttpGetIn">
+    <wsdl:part name="prefixText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TPPBusinessNamesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="ParcelStreetNamesHttpGetIn">
+    <wsdl:part name="prefixText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ParcelStreetNamesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="TPPStreetNamesHttpGetIn">
+    <wsdl:part name="prefixText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TPPStreetNamesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="ParcelAddressesHttpPostIn">
+    <wsdl:part name="prefixText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ParcelAddressesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="TPPAddressesHttpPostIn">
+    <wsdl:part name="prefixText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TPPAddressesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="NewSearchBoxLookupHttpPostIn">
+    <wsdl:part name="prefixText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="NewSearchBoxLookupHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="ParcelOwnerNamesHttpPostIn">
+    <wsdl:part name="prefixText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ParcelOwnerNamesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="ParcelPropertyNamesHttpPostIn">
+    <wsdl:part name="prefixText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ParcelPropertyNamesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="ParcelSubNamesHttpPostIn">
+    <wsdl:part name="prefixText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ParcelSubNamesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="TPPBusinessNamesHttpPostIn">
+    <wsdl:part name="prefixText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TPPBusinessNamesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="ParcelStreetNamesHttpPostIn">
+    <wsdl:part name="prefixText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ParcelStreetNamesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="TPPStreetNamesHttpPostIn">
+    <wsdl:part name="prefixText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TPPStreetNamesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:portType name="AutoCompleteLookupsSoap">
+    <wsdl:operation name="ParcelAddresses">
+      <wsdl:input message="tns:ParcelAddressesSoapIn" />
+      <wsdl:output message="tns:ParcelAddressesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TPPAddresses">
+      <wsdl:input message="tns:TPPAddressesSoapIn" />
+      <wsdl:output message="tns:TPPAddressesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewSearchBoxLookup">
+      <wsdl:input message="tns:NewSearchBoxLookupSoapIn" />
+      <wsdl:output message="tns:NewSearchBoxLookupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ParcelOwnerNames">
+      <wsdl:input message="tns:ParcelOwnerNamesSoapIn" />
+      <wsdl:output message="tns:ParcelOwnerNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ParcelPropertyNames">
+      <wsdl:input message="tns:ParcelPropertyNamesSoapIn" />
+      <wsdl:output message="tns:ParcelPropertyNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ParcelSubNames">
+      <wsdl:input message="tns:ParcelSubNamesSoapIn" />
+      <wsdl:output message="tns:ParcelSubNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TPPBusinessNames">
+      <wsdl:input message="tns:TPPBusinessNamesSoapIn" />
+      <wsdl:output message="tns:TPPBusinessNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ParcelStreetNames">
+      <wsdl:input message="tns:ParcelStreetNamesSoapIn" />
+      <wsdl:output message="tns:ParcelStreetNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TPPStreetNames">
+      <wsdl:input message="tns:TPPStreetNamesSoapIn" />
+      <wsdl:output message="tns:TPPStreetNamesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AutoCompleteLookupsHttpGet">
+    <wsdl:operation name="ParcelAddresses">
+      <wsdl:input message="tns:ParcelAddressesHttpGetIn" />
+      <wsdl:output message="tns:ParcelAddressesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TPPAddresses">
+      <wsdl:input message="tns:TPPAddressesHttpGetIn" />
+      <wsdl:output message="tns:TPPAddressesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewSearchBoxLookup">
+      <wsdl:input message="tns:NewSearchBoxLookupHttpGetIn" />
+      <wsdl:output message="tns:NewSearchBoxLookupHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ParcelOwnerNames">
+      <wsdl:input message="tns:ParcelOwnerNamesHttpGetIn" />
+      <wsdl:output message="tns:ParcelOwnerNamesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ParcelPropertyNames">
+      <wsdl:input message="tns:ParcelPropertyNamesHttpGetIn" />
+      <wsdl:output message="tns:ParcelPropertyNamesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ParcelSubNames">
+      <wsdl:input message="tns:ParcelSubNamesHttpGetIn" />
+      <wsdl:output message="tns:ParcelSubNamesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TPPBusinessNames">
+      <wsdl:input message="tns:TPPBusinessNamesHttpGetIn" />
+      <wsdl:output message="tns:TPPBusinessNamesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ParcelStreetNames">
+      <wsdl:input message="tns:ParcelStreetNamesHttpGetIn" />
+      <wsdl:output message="tns:ParcelStreetNamesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TPPStreetNames">
+      <wsdl:input message="tns:TPPStreetNamesHttpGetIn" />
+      <wsdl:output message="tns:TPPStreetNamesHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AutoCompleteLookupsHttpPost">
+    <wsdl:operation name="ParcelAddresses">
+      <wsdl:input message="tns:ParcelAddressesHttpPostIn" />
+      <wsdl:output message="tns:ParcelAddressesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TPPAddresses">
+      <wsdl:input message="tns:TPPAddressesHttpPostIn" />
+      <wsdl:output message="tns:TPPAddressesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewSearchBoxLookup">
+      <wsdl:input message="tns:NewSearchBoxLookupHttpPostIn" />
+      <wsdl:output message="tns:NewSearchBoxLookupHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ParcelOwnerNames">
+      <wsdl:input message="tns:ParcelOwnerNamesHttpPostIn" />
+      <wsdl:output message="tns:ParcelOwnerNamesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ParcelPropertyNames">
+      <wsdl:input message="tns:ParcelPropertyNamesHttpPostIn" />
+      <wsdl:output message="tns:ParcelPropertyNamesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ParcelSubNames">
+      <wsdl:input message="tns:ParcelSubNamesHttpPostIn" />
+      <wsdl:output message="tns:ParcelSubNamesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TPPBusinessNames">
+      <wsdl:input message="tns:TPPBusinessNamesHttpPostIn" />
+      <wsdl:output message="tns:TPPBusinessNamesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ParcelStreetNames">
+      <wsdl:input message="tns:ParcelStreetNamesHttpPostIn" />
+      <wsdl:output message="tns:ParcelStreetNamesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TPPStreetNames">
+      <wsdl:input message="tns:TPPStreetNamesHttpPostIn" />
+      <wsdl:output message="tns:TPPStreetNamesHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AutoCompleteLookupsSoap" type="tns:AutoCompleteLookupsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ParcelAddresses">
+      <soap:operation soapAction="http://www.ocpafl.org/ParcelAddresses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TPPAddresses">
+      <soap:operation soapAction="http://www.ocpafl.org/TPPAddresses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewSearchBoxLookup">
+      <soap:operation soapAction="http://www.ocpafl.org/NewSearchBoxLookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParcelOwnerNames">
+      <soap:operation soapAction="http://www.ocpafl.org/ParcelOwnerNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParcelPropertyNames">
+      <soap:operation soapAction="http://www.ocpafl.org/ParcelPropertyNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParcelSubNames">
+      <soap:operation soapAction="http://www.ocpafl.org/ParcelSubNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TPPBusinessNames">
+      <soap:operation soapAction="http://www.ocpafl.org/TPPBusinessNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParcelStreetNames">
+      <soap:operation soapAction="http://www.ocpafl.org/ParcelStreetNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TPPStreetNames">
+      <soap:operation soapAction="http://www.ocpafl.org/TPPStreetNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AutoCompleteLookupsSoap12" type="tns:AutoCompleteLookupsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ParcelAddresses">
+      <soap12:operation soapAction="http://www.ocpafl.org/ParcelAddresses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TPPAddresses">
+      <soap12:operation soapAction="http://www.ocpafl.org/TPPAddresses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewSearchBoxLookup">
+      <soap12:operation soapAction="http://www.ocpafl.org/NewSearchBoxLookup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParcelOwnerNames">
+      <soap12:operation soapAction="http://www.ocpafl.org/ParcelOwnerNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParcelPropertyNames">
+      <soap12:operation soapAction="http://www.ocpafl.org/ParcelPropertyNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParcelSubNames">
+      <soap12:operation soapAction="http://www.ocpafl.org/ParcelSubNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TPPBusinessNames">
+      <soap12:operation soapAction="http://www.ocpafl.org/TPPBusinessNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParcelStreetNames">
+      <soap12:operation soapAction="http://www.ocpafl.org/ParcelStreetNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TPPStreetNames">
+      <soap12:operation soapAction="http://www.ocpafl.org/TPPStreetNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AutoCompleteLookupsHttpGet" type="tns:AutoCompleteLookupsHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ParcelAddresses">
+      <http:operation location="/ParcelAddresses" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TPPAddresses">
+      <http:operation location="/TPPAddresses" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewSearchBoxLookup">
+      <http:operation location="/NewSearchBoxLookup" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParcelOwnerNames">
+      <http:operation location="/ParcelOwnerNames" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParcelPropertyNames">
+      <http:operation location="/ParcelPropertyNames" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParcelSubNames">
+      <http:operation location="/ParcelSubNames" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TPPBusinessNames">
+      <http:operation location="/TPPBusinessNames" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParcelStreetNames">
+      <http:operation location="/ParcelStreetNames" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TPPStreetNames">
+      <http:operation location="/TPPStreetNames" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AutoCompleteLookupsHttpPost" type="tns:AutoCompleteLookupsHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ParcelAddresses">
+      <http:operation location="/ParcelAddresses" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TPPAddresses">
+      <http:operation location="/TPPAddresses" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewSearchBoxLookup">
+      <http:operation location="/NewSearchBoxLookup" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParcelOwnerNames">
+      <http:operation location="/ParcelOwnerNames" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParcelPropertyNames">
+      <http:operation location="/ParcelPropertyNames" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParcelSubNames">
+      <http:operation location="/ParcelSubNames" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TPPBusinessNames">
+      <http:operation location="/TPPBusinessNames" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParcelStreetNames">
+      <http:operation location="/ParcelStreetNames" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TPPStreetNames">
+      <http:operation location="/TPPStreetNames" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AutoCompleteLookups">
+    <wsdl:port name="AutoCompleteLookupsSoap" binding="tns:AutoCompleteLookupsSoap">
+      <soap:address location="http://www.ocpafl.org/Components/AutoCompleteLookups.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AutoCompleteLookupsSoap12" binding="tns:AutoCompleteLookupsSoap12">
+      <soap12:address location="http://www.ocpafl.org/Components/AutoCompleteLookups.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AutoCompleteLookupsHttpGet" binding="tns:AutoCompleteLookupsHttpGet">
+      <http:address location="http://www.ocpafl.org/Components/AutoCompleteLookups.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AutoCompleteLookupsHttpPost" binding="tns:AutoCompleteLookupsHttpPost">
+      <http:address location="http://www.ocpafl.org/Components/AutoCompleteLookups.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
