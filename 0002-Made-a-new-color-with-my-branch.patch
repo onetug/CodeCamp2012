@@ -1,0 +1,25 @@
+From fcf86cf3d6867966fc39c7c2cb271c1f977d24ea Mon Sep 17 00:00:00 2001
+From: Brian Hall <Brian@Qube-it.com>
+Date: Tue, 27 Sep 2011 13:46:54 -0400
+Subject: [PATCH 2/2] Made a new color with my branch
+
+---
+ src/OCC.UI.Webhost/Content/Site.css |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/src/OCC.UI.Webhost/Content/Site.css b/src/OCC.UI.Webhost/Content/Site.css
+index 7d6bbd3..79b1e16 100644
+--- a/src/OCC.UI.Webhost/Content/Site.css
++++ b/src/OCC.UI.Webhost/Content/Site.css
+@@ -4,7 +4,7 @@ to use a different color start by replacing all instances of
+ #5c87b2 with your new color.
+ ----------------------------------------------------------*/
+ body {
+-	background-color: rgb(234, 8, 8); /*#5c87b2;*/
++	background-color: rgb(139, 212, 247); /*#5c87b2;*/
+     font-size: .85em;
+     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+     margin: 0;
+-- 
+1.7.6.msysgit.0
+
