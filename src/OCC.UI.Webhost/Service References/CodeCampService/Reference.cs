@@ -15,15 +15,12 @@ namespace OCC.UI.Webhost.CodeCampService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Sponsor", Namespace="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Models")]
     [System.SerializableAttribute()]
-    public partial class Sponsor : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Person : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -35,16 +32,32 @@ namespace OCC.UI.Webhost.CodeCampService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Event", Namespace="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Models")]
+    [System.SerializableAttribute()]
+    public partial class Event : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
-                return this.NameField;
+                return this.extensionDataField;
             }
             set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
+                this.extensionDataField = value;
             }
         }
         
@@ -135,15 +148,106 @@ namespace OCC.UI.Webhost.CodeCampService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Session", Namespace="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Models")]
+    [System.SerializableAttribute()]
+    public partial class Session : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Sponsor", Namespace="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Models")]
+    [System.SerializableAttribute()]
+    public partial class Sponsor : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CodeCampService.ICodeCampService")]
     public interface ICodeCampService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICodeCampService/GetAllSponsors", ReplyAction="http://tempuri.org/ICodeCampService/GetAllSponsorsResponse")]
-        OCC.UI.Webhost.CodeCampService.Sponsor[] GetAllSponsors();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICodeCampService/RegisterPerson", ReplyAction="http://tempuri.org/ICodeCampService/RegisterPersonResponse")]
+        void RegisterPerson(OCC.UI.Webhost.CodeCampService.Person person);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICodeCampService/Login", ReplyAction="http://tempuri.org/ICodeCampService/LoginResponse")]
+        OCC.UI.Webhost.CodeCampService.Person Login(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICodeCampService/ChangePassword", ReplyAction="http://tempuri.org/ICodeCampService/ChangePasswordResponse")]
+        void ChangePassword(int idPerson, string oldPassword, string newPassword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICodeCampService/UpdatePerson", ReplyAction="http://tempuri.org/ICodeCampService/UpdatePersonResponse")]
+        void UpdatePerson(OCC.UI.Webhost.CodeCampService.Person person);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICodeCampService/DeletePerson", ReplyAction="http://tempuri.org/ICodeCampService/DeletePersonResponse")]
+        void DeletePerson(int idPerson);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICodeCampService/GetEvents", ReplyAction="http://tempuri.org/ICodeCampService/GetEventsResponse")]
+        OCC.UI.Webhost.CodeCampService.Event[] GetEvents(System.DateTime fromDate, System.DateTime toDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICodeCampService/CreateEvent", ReplyAction="http://tempuri.org/ICodeCampService/CreateEventResponse")]
+        void CreateEvent(OCC.UI.Webhost.CodeCampService.Event _event);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICodeCampService/GetEvent", ReplyAction="http://tempuri.org/ICodeCampService/GetEventResponse")]
+        OCC.UI.Webhost.CodeCampService.Event GetEvent(int idEvent);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICodeCampService/UpdateEvent", ReplyAction="http://tempuri.org/ICodeCampService/UpdateEventResponse")]
+        void UpdateEvent(OCC.UI.Webhost.CodeCampService.Event _event);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICodeCampService/GetAnnouncements", ReplyAction="http://tempuri.org/ICodeCampService/GetAnnouncementsResponse")]
-        OCC.UI.Webhost.CodeCampService.Announcement[] GetAnnouncements();
+        OCC.UI.Webhost.CodeCampService.Announcement[] GetAnnouncements(int idEvent);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICodeCampService/GetSessions", ReplyAction="http://tempuri.org/ICodeCampService/GetSessionsResponse")]
+        OCC.UI.Webhost.CodeCampService.Session[] GetSessions(int idEvent);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICodeCampService/GetSpeakers", ReplyAction="http://tempuri.org/ICodeCampService/GetSpeakersResponse")]
+        OCC.UI.Webhost.CodeCampService.Person[] GetSpeakers(int idEvent);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICodeCampService/GetSponsors", ReplyAction="http://tempuri.org/ICodeCampService/GetSponsorsResponse")]
+        OCC.UI.Webhost.CodeCampService.Sponsor[] GetSponsors(int idEvent);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -173,12 +277,56 @@ namespace OCC.UI.Webhost.CodeCampService {
                 base(binding, remoteAddress) {
         }
         
-        public OCC.UI.Webhost.CodeCampService.Sponsor[] GetAllSponsors() {
-            return base.Channel.GetAllSponsors();
+        public void RegisterPerson(OCC.UI.Webhost.CodeCampService.Person person) {
+            base.Channel.RegisterPerson(person);
         }
         
-        public OCC.UI.Webhost.CodeCampService.Announcement[] GetAnnouncements() {
-            return base.Channel.GetAnnouncements();
+        public OCC.UI.Webhost.CodeCampService.Person Login(string email, string password) {
+            return base.Channel.Login(email, password);
+        }
+        
+        public void ChangePassword(int idPerson, string oldPassword, string newPassword) {
+            base.Channel.ChangePassword(idPerson, oldPassword, newPassword);
+        }
+        
+        public void UpdatePerson(OCC.UI.Webhost.CodeCampService.Person person) {
+            base.Channel.UpdatePerson(person);
+        }
+        
+        public void DeletePerson(int idPerson) {
+            base.Channel.DeletePerson(idPerson);
+        }
+        
+        public OCC.UI.Webhost.CodeCampService.Event[] GetEvents(System.DateTime fromDate, System.DateTime toDate) {
+            return base.Channel.GetEvents(fromDate, toDate);
+        }
+        
+        public void CreateEvent(OCC.UI.Webhost.CodeCampService.Event _event) {
+            base.Channel.CreateEvent(_event);
+        }
+        
+        public OCC.UI.Webhost.CodeCampService.Event GetEvent(int idEvent) {
+            return base.Channel.GetEvent(idEvent);
+        }
+        
+        public void UpdateEvent(OCC.UI.Webhost.CodeCampService.Event _event) {
+            base.Channel.UpdateEvent(_event);
+        }
+        
+        public OCC.UI.Webhost.CodeCampService.Announcement[] GetAnnouncements(int idEvent) {
+            return base.Channel.GetAnnouncements(idEvent);
+        }
+        
+        public OCC.UI.Webhost.CodeCampService.Session[] GetSessions(int idEvent) {
+            return base.Channel.GetSessions(idEvent);
+        }
+        
+        public OCC.UI.Webhost.CodeCampService.Person[] GetSpeakers(int idEvent) {
+            return base.Channel.GetSpeakers(idEvent);
+        }
+        
+        public OCC.UI.Webhost.CodeCampService.Sponsor[] GetSponsors(int idEvent) {
+            return base.Channel.GetSponsors(idEvent);
         }
     }
 }

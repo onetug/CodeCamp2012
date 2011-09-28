@@ -11,10 +11,49 @@ namespace OCC.Service.Webhost
     [ServiceContract]
     public interface ICodeCampService
     {
-        [OperationContract]
-        IList<Sponsor> GetAllSponsors();
+        // Person
 
         [OperationContract]
-        IList<Announcement> GetAnnouncements();
+        void RegisterPerson(Person person);
+
+        [OperationContract]
+        Person Login(string email, string password);
+
+        [OperationContract]
+        void ChangePassword(int idPerson, string oldPassword, string newPassword);
+
+        [OperationContract]
+        void UpdatePerson(Person person);
+
+        [OperationContract]
+        void DeletePerson(int idPerson);
+
+        // Events
+
+        [OperationContract]
+        IList<Event> GetEvents(DateTime fromDate, DateTime toDate);
+
+        [OperationContract]
+        void CreateEvent(Event _event);
+        
+        [OperationContract]
+        Event GetEvent(int idEvent);
+
+        [OperationContract]
+        void UpdateEvent(Event _event);
+
+        // ...
+
+        [OperationContract]
+        IList<Announcement> GetAnnouncements(int idEvent);
+
+        [OperationContract]
+        IList<Session> GetSessions(int idEvent);
+
+        [OperationContract]
+        IList<Person> GetSpeakers(int idEvent);
+
+        [OperationContract]
+        IList<Sponsor> GetSponsors(int idEvent);
     }
 }

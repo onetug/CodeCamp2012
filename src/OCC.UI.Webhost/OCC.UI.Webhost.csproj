@@ -123,6 +123,15 @@
     <None Include="Service References\CodeCampService\OCC.UI.Webhost.CodeCampService.Announcement.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\CodeCampService\OCC.UI.Webhost.CodeCampService.Event.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CodeCampService\OCC.UI.Webhost.CodeCampService.Person.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CodeCampService\OCC.UI.Webhost.CodeCampService.Session.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\CodeCampService\OCC.UI.Webhost.CodeCampService.Sponsor.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

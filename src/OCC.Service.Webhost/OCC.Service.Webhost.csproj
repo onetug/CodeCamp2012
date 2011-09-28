@@ -64,6 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Announcement.cs" />
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Session.cs" />
     <Compile Include="ServiceContracts\CodeCampService.svc.cs">
       <DependentUpon>CodeCampService.svc</DependentUpon>
     </Compile>
