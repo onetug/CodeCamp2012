@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
-using OCC.Service.Webhost.Models;
-
-namespace OCC.Service.Webhost
+﻿namespace OCC.Service.Webhost.Services
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ServiceModel;
+
     [ServiceContract]
     public interface ICodeCampService
     {
