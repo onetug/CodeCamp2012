@@ -1,13 +1,44 @@
-﻿@import url("../Content/css/reset.css");
-@import url("../Content/css/text.css");
-@import url("../Content/css/960_12_col.css");
+﻿@import url("../../Content/css/reset.css");
+@import url("../../Content/css/text.css");
+@import url("../../Content/css/960_12_col.css");
+@import url("../../Content/css/Tiles.css");
 
 body
 {
 	background-color: rgb(0, 0, 0);
 }
 
-#siteContainer
+.siteContainer
 {
 	background-color: rgb(31, 31, 31);
+	/*background-image: url("../../Content/themes/Shared/12_col.gif");
+	color: black;*/
 }
+
+#header
+{
+	margin-top: 3.5em;
+	margin-bottom: 2.0em;	
+}
+
+#header, h1
+{
+	float: left;
+}
+
+.onetugTree
+{
+	padding: 5px 10px 0px 10px;
+	clear: right;
+}
+
+#tilesColumnRight
+{
+	width: 300px;
+	margin-top: 1.5em;
+	display: inline;
+	float: right;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+

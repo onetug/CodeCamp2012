@@ -1,0 +1,58 @@
+﻿.tileBackgroundColor
+{
+	background-color: rgb(0, 153, 0);
+}
+
+.singleTileLeft
+{
+	width: 140px;
+	height: 140px;
+	display: inline;
+	float: left;
+	margin-left: 0px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	position: relative;
+}
+
+.singleTileRight
+{
+	width: 140px;
+	height: 140px;
+	display: inline;
+	float: left;
+	margin-left: 10px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	position: relative;
+}
+
+.doubleTile
+{
+	width: 300px;
+	height: 140px;
+	display: inline;
+	float: left;
+	margin-left: 0px;
+	margin-right: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	position: relative; 
+}
+
+.labelLowerLeft
+{
+	position: absolute;
+	left: 5px;
+	top: 110px;
+	font-size: 1.125em;
+}
+
+.singleTileIcon
+{
+	position: absolute;
+	left: 46px;
+	top: 46px; 	
+}

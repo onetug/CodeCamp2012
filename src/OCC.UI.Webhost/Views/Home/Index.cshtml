@@ -4,16 +4,14 @@
     ViewBag.Title = "Home Page";
 }
 
-<h2>@ViewBag.Message</h2>
-
-<div class="column">
+<div>
 
 @foreach (var announcement in ViewData.Model.Announcements)
 {
-    <div class="announcement">
-        <div class="announcement-title"><h3>@announcement.Title</h3></div>
-        <div class="announcement-subtitle"><i>@announcement.Subtitle</i></div>
-        <div class="announcement-contents">@announcement.Content</div>
+    <div>
+        <div><h3>@announcement.Title</h3></div>
+        <div><i>@announcement.Subtitle</i></div>
+        <div>@announcement.Content</div>
     </div>
 }
 

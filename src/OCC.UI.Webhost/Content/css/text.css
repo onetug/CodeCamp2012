@@ -10,7 +10,8 @@
 
 body
 {
-	font: 14px/1.5 "Segoe UI", Arial, 'Helvetica Neue', sans-serif;
+	font: 16px/1.5 "Segoe UI", Arial, 'Helvetica Neue', sans-serif;
+	color: whitesmoke;
 }
 
 pre,
@@ -32,32 +33,38 @@ hr
 
 h1
 {
-	font-size: 25px;
+	font-size: 3em;
+	font-weight: lighter;
 }
 
 h2
 {
-	font-size: 23px;
+	font-size: 2em;
+	font-weight: lighter;
 }
 
 h3
 {
-	font-size: 21px;
+	font-size: 1.5em;
+	font-weight: lighter;
 }
 
 h4
 {
-	font-size: 19px;
+	font-size: 1.25em;
+	font-weight: lighter;
 }
 
 h5
 {
-	font-size: 17px;
+	font-size: 1.125em;
+	font-weight: lighter;
 }
 
 h6
 {
-	font-size: 15px;
+	font-size: 1em;
+	font-weight: lighter;
 }
 
 /* `Spacing
@@ -78,7 +85,7 @@ li
 	margin-left: 30px;
 }
 
-p,
+/*p,
 dl,
 hr,
 h1,
@@ -96,4 +103,4 @@ fieldset,
 figure
 {
 	margin-bottom: 20px;
-}
+}*/
