@@ -1,4 +1,6 @@
-﻿namespace OCC.Service.Webhost.Services
+﻿using System.Web.Security;
+
+namespace OCC.Service.Webhost.Services
 {
     using System;
     using System.Collections.Generic;
@@ -13,16 +15,19 @@
         void RegisterPerson(Person person);
 
         [OperationContract]
-        Person Login(string email, string password);
+        Models.Person Login(Person person);
 
         [OperationContract]
-        void ChangePassword(int idPerson, string oldPassword, string newPassword);
+        void ChangePassword(int personId, string oldPassword, string newPassword);
 
         [OperationContract]
         void UpdatePerson(Person person);
 
         [OperationContract]
-        void DeletePerson(int idPerson);
+        void DeletePerson(int personId);
+
+        [OperationContract]
+        Models.Person FindPersonByEmail(string email);
 
         // Events
 

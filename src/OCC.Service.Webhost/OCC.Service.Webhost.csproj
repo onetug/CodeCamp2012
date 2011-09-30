@@ -69,6 +69,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\UserNamePasswordHashProvider.cs" />
     <Compile Include="Services\Announcement.cs" />
     <Compile Include="Services\Event.cs" />
     <Compile Include="Services\Person.cs" />

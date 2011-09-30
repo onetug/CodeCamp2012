@@ -13,12 +13,48 @@
 
         public void RegisterPerson(Person person)
         {
-            throw new NotImplementedException();
+            using (var db = new OCCDB())
+            {
+                var pTo = new Models.Person();
+                Mapper.CopyProperties(person, pTo);
+                db.People.Add(pTo);
+                db.SaveChanges();
+            }
         }
 
-        public Person Login(string email, string password)
+        public Models.Person Login(Person person)
         {
-            return new Person() { ID = 1, FirstName = "John", LastName = "Smith", Email = email, Title = "Developer", Bio = "John's bio" };
+            Models.Person bcAttendee = new Models.Person();
+            using (var db = new OCCDB())
+            {
+                var dcAttendee = 
+                    db.People
+                      .SingleOrDefault(p => 
+                                       p.Email == person.Email &&
+                                       p.PasswordHash == person.PasswordHash);
+                
+                Mapper.CopyProperties(dcAttendee, bcAttendee);
+   
+                // TODO OFC Not sure I want to throw something, depends on how the client is going to handle it
+                //if (p.Equals(null))
+                //{
+                //    throw new AuthenticationException("Login failed.");
+                //}                
+            }
+            return bcAttendee;
+        }
+
+        public Models.Person FindPersonByEmail(string email)
+        {
+            var bcAttendee = new Models.Person();
+            using (var db = new OCCDB())
+            {
+                var dcAttendee = db.People
+                    .SingleOrDefault(p => p.Email == email);
+
+                Mapper.CopyProperties(dcAttendee, bcAttendee);
+            }
+            return bcAttendee;
         }
 
         public void ChangePassword(int id, string oldPassord, string newPassword)
@@ -31,11 +67,11 @@
             throw new NotImplementedException();
         }
 
-        public void DeletePerson(int idPerson)
+        public void DeletePerson(int personId)
         {
             throw new NotImplementedException();
         }
-
+        
         // Events
 
         public IList<Event> GetEvents(DateTime fromDate, DateTime toDate)
@@ -48,11 +84,11 @@
             throw new NotImplementedException();
         }
 
-        public Event GetEvent(int idEvent)
+        public Event GetEvent(int eventId)
         {
             using (OCCDB db = new OCCDB())
             {
-                var e = db.Events.Find(idEvent);
+                var e = db.Events.Find(eventId);
                 var result = new Event();
                 Mapper.CopyProperties(e, result);
 
@@ -67,7 +103,7 @@
 
         // ... 
 
-        public IList<Announcement> GetAnnouncements(int idEvent)
+        public IList<Announcement> GetAnnouncements(int eventId)
         {
             using (OCCDB db = new OCCDB())
             {
