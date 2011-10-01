@@ -1,12 +1,10 @@
-﻿using System.Web.Security;
-
-namespace OCC.Service.Webhost.Services
+﻿namespace OCC.Service.Webhost.Services
 {
     using System;
     using System.Collections.Generic;
     using System.ServiceModel;
 
-    [ServiceContract]
+    [ServiceContract(Namespace = "http://onetug.org/2012/CodeCampService")]
     public interface ICodeCampService
     {
         // Person
@@ -15,7 +13,7 @@ namespace OCC.Service.Webhost.Services
         void RegisterPerson(Person person);
 
         [OperationContract]
-        Models.Person Login(Person person);
+        Person Login(Person person);
 
         [OperationContract]
         void ChangePassword(int personId, string oldPassword, string newPassword);
@@ -27,7 +25,7 @@ namespace OCC.Service.Webhost.Services
         void DeletePerson(int personId);
 
         [OperationContract]
-        Models.Person FindPersonByEmail(string email);
+        Person FindPersonByEmail(string email);
 
         // Events
 

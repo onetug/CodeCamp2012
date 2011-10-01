@@ -69,6 +69,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\UserNamePasswordHashProvider.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\HomeModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -139,7 +140,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -168,6 +171,13 @@
     <Content Include="Views\Shared\_LogOnPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <None Include="Service References\CodeCampService\CodeCampService1.wsdl" />
+    <None Include="Service References\CodeCampService\CodeCampService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CodeCampService\CodeCampService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -184,12 +194,6 @@
   <ItemGroup>
     <None Include="Service References\CodeCampService\CodeCampService.wsdl" />
     <None Include="Service References\CodeCampService\CodeCampService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CodeCampService\CodeCampService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CodeCampService\CodeCampService2.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

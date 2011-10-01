@@ -17,44 +17,49 @@
             {
                 var pTo = new Models.Person();
                 Mapper.CopyProperties(person, pTo);
-                db.People.Add(pTo);
-                db.SaveChanges();
+                //TODO OFC - Uncomment persistence calls
+                // db.People.Add(pTo);
+                // db.SaveChanges();
             }
         }
 
-        public Models.Person Login(Person person)
+        public Person Login(Person person)
         {
-            Models.Person bcAttendee = new Models.Person();
-            using (var db = new OCCDB())
-            {
-                var dcAttendee = 
-                    db.People
-                      .SingleOrDefault(p => 
-                                       p.Email == person.Email &&
-                                       p.PasswordHash == person.PasswordHash);
+            Person dcAttendee = default(Person);
+            //TODO OFC - Uncomment Login statements
+            //using (var db = new OCCDB())
+            //{
+            //    var bcAttendee = 
+            //        db.People
+            //          .SingleOrDefault(p => 
+            //                           p.Email == person.Email &&
+            //                           p.PasswordHash == person.PasswordHash);
                 
-                Mapper.CopyProperties(dcAttendee, bcAttendee);
-   
-                // TODO OFC Not sure I want to throw something, depends on how the client is going to handle it
-                //if (p.Equals(null))
-                //{
-                //    throw new AuthenticationException("Login failed.");
-                //}                
-            }
-            return bcAttendee;
+            //    if (bcAttendee != null)
+            //    {
+            //        dcAttendee = new Person();
+            //        Mapper.CopyProperties(bcAttendee, dcAttendee);
+            //    }   
+            //}
+            return dcAttendee;
         }
 
-        public Models.Person FindPersonByEmail(string email)
+        public Person FindPersonByEmail(string email)
         {
-            var bcAttendee = new Models.Person();
-            using (var db = new OCCDB())
-            {
-                var dcAttendee = db.People
-                    .SingleOrDefault(p => p.Email == email);
+            Person dcAttendee = default(Person);
+            //TODO OFC - Uncomment attendee lookup.
+            //using (var db = new OCCDB())
+            //{
+            //    var bcAttendee = db.People
+            //        .SingleOrDefault(p => p.Email == email);
 
-                Mapper.CopyProperties(dcAttendee, bcAttendee);
-            }
-            return bcAttendee;
+            //    if (bcAttendee != null)
+            //    {
+            //        dcAttendee = new Person();
+            //        Mapper.CopyProperties(bcAttendee, dcAttendee);
+            //    }
+            //}
+            return dcAttendee;
         }
 
         public void ChangePassword(int id, string oldPassord, string newPassword)

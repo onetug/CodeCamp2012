@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="deeb98a1-ba65-4929-ac9f-ea573a65b3c8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c29d4c2f-7032-4285-8c37-14f3ed2b3837" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -21,11 +21,12 @@
     <MetadataSource Address="http://localhost:62256/Services/CodeCampService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CodeCampService.wsdl" MetadataType="Wsdl" ID="4b67e42a-d963-407a-9ad6-503f63bfbcab" SourceId="1" SourceUrl="http://localhost:62256/Services/CodeCampService.svc?wsdl" />
-    <MetadataFile FileName="CodeCampService.xsd" MetadataType="Schema" ID="e87f72f2-4a00-4673-b795-542003b6d34f" SourceId="1" SourceUrl="http://localhost:62256/Services/CodeCampService.svc?xsd=xsd0" />
-    <MetadataFile FileName="CodeCampService1.xsd" MetadataType="Schema" ID="0713602c-adb1-438f-a8dc-b82f49e00c85" SourceId="1" SourceUrl="http://localhost:62256/Services/CodeCampService.svc?xsd=xsd1" />
-    <MetadataFile FileName="CodeCampService2.xsd" MetadataType="Schema" ID="aca0556c-edb1-4002-948e-461d659075ef" SourceId="1" SourceUrl="http://localhost:62256/Services/CodeCampService.svc?xsd=xsd2" />
-    <MetadataFile FileName="CodeCampService.disco" MetadataType="Disco" ID="944729fc-e919-4d1f-92b2-35ceb86fd2c5" SourceId="1" SourceUrl="http://localhost:62256/Services/CodeCampService.svc?disco" />
+    <MetadataFile FileName="CodeCampService.wsdl" MetadataType="Wsdl" ID="af6cabe9-2f0f-4d67-8f7b-7e10ba424ada" SourceId="1" SourceUrl="http://localhost:62256/Services/CodeCampService.svc?wsdl" />
+    <MetadataFile FileName="CodeCampService.xsd" MetadataType="Schema" ID="3bf93dc5-88f3-4e63-9833-28f3945cd73b" SourceId="1" SourceUrl="http://localhost:62256/Services/CodeCampService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CodeCampService.disco" MetadataType="Disco" ID="3c199e6e-4cf0-4f3c-ae1a-d3e75a672dca" SourceId="1" SourceUrl="http://localhost:62256/Services/CodeCampService.svc?disco" />
+    <MetadataFile FileName="CodeCampService1.wsdl" MetadataType="Wsdl" ID="c5cf82f6-6f70-46db-a25c-4abcfb82ddb7" SourceId="1" SourceUrl="http://localhost:62256/Services/CodeCampService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="CodeCampService1.xsd" MetadataType="Schema" ID="38ef4434-09cc-4dbb-bf37-f89ef1d9ce23" SourceId="1" SourceUrl="http://localhost:62256/Services/CodeCampService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CodeCampService2.xsd" MetadataType="Schema" ID="601397fe-a743-418d-9834-91697a1a9e8a" SourceId="1" SourceUrl="http://localhost:62256/Services/CodeCampService.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -1,148 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CodeCampService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-  <wsdl:types>
-    <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://localhost:62256/Services/CodeCampService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://localhost:62256/Services/CodeCampService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:62256/Services/CodeCampService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" />
-    </xsd:schema>
-  </wsdl:types>
-  <wsdl:message name="ICodeCampService_RegisterPerson_InputMessage">
-    <wsdl:part name="parameters" element="tns:RegisterPerson" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_RegisterPerson_OutputMessage">
-    <wsdl:part name="parameters" element="tns:RegisterPersonResponse" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_Login_InputMessage">
-    <wsdl:part name="parameters" element="tns:Login" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_Login_OutputMessage">
-    <wsdl:part name="parameters" element="tns:LoginResponse" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_ChangePassword_InputMessage">
-    <wsdl:part name="parameters" element="tns:ChangePassword" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_ChangePassword_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_UpdatePerson_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdatePerson" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_UpdatePerson_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdatePersonResponse" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_DeletePerson_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeletePerson" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_DeletePerson_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeletePersonResponse" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_GetEvents_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetEvents" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_GetEvents_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetEventsResponse" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_CreateEvent_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateEvent" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_CreateEvent_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateEventResponse" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_GetEvent_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetEvent" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_GetEvent_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetEventResponse" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_UpdateEvent_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateEvent" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_UpdateEvent_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateEventResponse" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_GetAnnouncements_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAnnouncements" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_GetAnnouncements_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAnnouncementsResponse" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_GetSessions_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetSessions" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_GetSessions_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetSessionsResponse" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_GetSpeakers_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetSpeakers" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_GetSpeakers_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetSpeakersResponse" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_GetSponsors_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetSponsors" />
-  </wsdl:message>
-  <wsdl:message name="ICodeCampService_GetSponsors_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetSponsorsResponse" />
-  </wsdl:message>
-  <wsdl:portType name="ICodeCampService">
-    <wsdl:operation name="RegisterPerson">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICodeCampService/RegisterPerson" message="tns:ICodeCampService_RegisterPerson_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICodeCampService/RegisterPersonResponse" message="tns:ICodeCampService_RegisterPerson_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Login">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICodeCampService/Login" message="tns:ICodeCampService_Login_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICodeCampService/LoginResponse" message="tns:ICodeCampService_Login_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ChangePassword">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICodeCampService/ChangePassword" message="tns:ICodeCampService_ChangePassword_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICodeCampService/ChangePasswordResponse" message="tns:ICodeCampService_ChangePassword_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdatePerson">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICodeCampService/UpdatePerson" message="tns:ICodeCampService_UpdatePerson_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICodeCampService/UpdatePersonResponse" message="tns:ICodeCampService_UpdatePerson_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="DeletePerson">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICodeCampService/DeletePerson" message="tns:ICodeCampService_DeletePerson_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICodeCampService/DeletePersonResponse" message="tns:ICodeCampService_DeletePerson_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetEvents">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICodeCampService/GetEvents" message="tns:ICodeCampService_GetEvents_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICodeCampService/GetEventsResponse" message="tns:ICodeCampService_GetEvents_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="CreateEvent">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICodeCampService/CreateEvent" message="tns:ICodeCampService_CreateEvent_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICodeCampService/CreateEventResponse" message="tns:ICodeCampService_CreateEvent_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetEvent">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICodeCampService/GetEvent" message="tns:ICodeCampService_GetEvent_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICodeCampService/GetEventResponse" message="tns:ICodeCampService_GetEvent_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateEvent">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICodeCampService/UpdateEvent" message="tns:ICodeCampService_UpdateEvent_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICodeCampService/UpdateEventResponse" message="tns:ICodeCampService_UpdateEvent_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAnnouncements">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICodeCampService/GetAnnouncements" message="tns:ICodeCampService_GetAnnouncements_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICodeCampService/GetAnnouncementsResponse" message="tns:ICodeCampService_GetAnnouncements_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetSessions">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICodeCampService/GetSessions" message="tns:ICodeCampService_GetSessions_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICodeCampService/GetSessionsResponse" message="tns:ICodeCampService_GetSessions_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetSpeakers">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICodeCampService/GetSpeakers" message="tns:ICodeCampService_GetSpeakers_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICodeCampService/GetSpeakersResponse" message="tns:ICodeCampService_GetSpeakers_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetSponsors">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICodeCampService/GetSponsors" message="tns:ICodeCampService_GetSponsors_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICodeCampService/GetSponsorsResponse" message="tns:ICodeCampService_GetSponsors_OutputMessage" />
-    </wsdl:operation>
-  </wsdl:portType>
-  <wsdl:binding name="BasicHttpBinding_ICodeCampService" type="tns:ICodeCampService">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://onetug.org/2012/CodeCampService" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CodeCampService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://onetug.org/2012/CodeCampService" location="http://localhost:62256/Services/CodeCampService.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_ICodeCampService" type="i0:ICodeCampService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="RegisterPerson">
-      <soap:operation soapAction="http://tempuri.org/ICodeCampService/RegisterPerson" style="document" />
+      <soap:operation soapAction="http://onetug.org/2012/CodeCampService/ICodeCampService/RegisterPerson" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -151,7 +14,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Login">
-      <soap:operation soapAction="http://tempuri.org/ICodeCampService/Login" style="document" />
+      <soap:operation soapAction="http://onetug.org/2012/CodeCampService/ICodeCampService/Login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -160,7 +23,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ChangePassword">
-      <soap:operation soapAction="http://tempuri.org/ICodeCampService/ChangePassword" style="document" />
+      <soap:operation soapAction="http://onetug.org/2012/CodeCampService/ICodeCampService/ChangePassword" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -169,7 +32,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdatePerson">
-      <soap:operation soapAction="http://tempuri.org/ICodeCampService/UpdatePerson" style="document" />
+      <soap:operation soapAction="http://onetug.org/2012/CodeCampService/ICodeCampService/UpdatePerson" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -178,7 +41,16 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeletePerson">
-      <soap:operation soapAction="http://tempuri.org/ICodeCampService/DeletePerson" style="document" />
+      <soap:operation soapAction="http://onetug.org/2012/CodeCampService/ICodeCampService/DeletePerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindPersonByEmail">
+      <soap:operation soapAction="http://onetug.org/2012/CodeCampService/ICodeCampService/FindPersonByEmail" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -187,7 +59,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetEvents">
-      <soap:operation soapAction="http://tempuri.org/ICodeCampService/GetEvents" style="document" />
+      <soap:operation soapAction="http://onetug.org/2012/CodeCampService/ICodeCampService/GetEvents" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -196,7 +68,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateEvent">
-      <soap:operation soapAction="http://tempuri.org/ICodeCampService/CreateEvent" style="document" />
+      <soap:operation soapAction="http://onetug.org/2012/CodeCampService/ICodeCampService/CreateEvent" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -205,7 +77,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetEvent">
-      <soap:operation soapAction="http://tempuri.org/ICodeCampService/GetEvent" style="document" />
+      <soap:operation soapAction="http://onetug.org/2012/CodeCampService/ICodeCampService/GetEvent" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -214,7 +86,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="UpdateEvent">
-      <soap:operation soapAction="http://tempuri.org/ICodeCampService/UpdateEvent" style="document" />
+      <soap:operation soapAction="http://onetug.org/2012/CodeCampService/ICodeCampService/UpdateEvent" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -223,7 +95,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetAnnouncements">
-      <soap:operation soapAction="http://tempuri.org/ICodeCampService/GetAnnouncements" style="document" />
+      <soap:operation soapAction="http://onetug.org/2012/CodeCampService/ICodeCampService/GetAnnouncements" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -232,7 +104,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSessions">
-      <soap:operation soapAction="http://tempuri.org/ICodeCampService/GetSessions" style="document" />
+      <soap:operation soapAction="http://onetug.org/2012/CodeCampService/ICodeCampService/GetSessions" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -241,7 +113,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSpeakers">
-      <soap:operation soapAction="http://tempuri.org/ICodeCampService/GetSpeakers" style="document" />
+      <soap:operation soapAction="http://onetug.org/2012/CodeCampService/ICodeCampService/GetSpeakers" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -250,7 +122,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetSponsors">
-      <soap:operation soapAction="http://tempuri.org/ICodeCampService/GetSponsors" style="document" />
+      <soap:operation soapAction="http://onetug.org/2012/CodeCampService/ICodeCampService/GetSponsors" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

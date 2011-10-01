@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:tns="http://onetug.org/2012/CodeCampService" elementFormDefault="qualified" targetNamespace="http://onetug.org/2012/CodeCampService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:62256/Services/CodeCampService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" />
   <xs:element name="RegisterPerson">
     <xs:complexType>
@@ -16,22 +16,21 @@
   <xs:element name="Login">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="person" nillable="true" type="q2:Person" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="LoginResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="LoginResult" nillable="true" type="q2:Person" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="LoginResult" nillable="true" type="q3:Person" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ChangePassword">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="idPerson" type="xs:int" />
+        <xs:element minOccurs="0" name="personId" type="xs:int" />
         <xs:element minOccurs="0" name="oldPassword" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="newPassword" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -45,7 +44,7 @@
   <xs:element name="UpdatePerson">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="person" nillable="true" type="q3:Person" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="person" nillable="true" type="q4:Person" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -57,13 +56,27 @@
   <xs:element name="DeletePerson">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="idPerson" type="xs:int" />
+        <xs:element minOccurs="0" name="personId" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DeletePersonResponse">
     <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindPersonByEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindPersonByEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="FindPersonByEmailResult" nillable="true" type="q5:Person" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetEvents">
@@ -77,14 +90,14 @@
   <xs:element name="GetEventsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="GetEventsResult" nillable="true" type="q4:ArrayOfEvent" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="GetEventsResult" nillable="true" type="q6:ArrayOfEvent" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateEvent">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="_event" nillable="true" type="q5:Event" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="_event" nillable="true" type="q7:Event" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -103,14 +116,14 @@
   <xs:element name="GetEventResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="GetEventResult" nillable="true" type="q6:Event" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="GetEventResult" nillable="true" type="q8:Event" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateEvent">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="_event" nillable="true" type="q7:Event" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="_event" nillable="true" type="q9:Event" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -129,7 +142,7 @@
   <xs:element name="GetAnnouncementsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="GetAnnouncementsResult" nillable="true" type="q8:ArrayOfAnnouncement" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="GetAnnouncementsResult" nillable="true" type="q10:ArrayOfAnnouncement" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -143,7 +156,7 @@
   <xs:element name="GetSessionsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="GetSessionsResult" nillable="true" type="q9:ArrayOfSession" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="GetSessionsResult" nillable="true" type="q11:ArrayOfSession" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -157,7 +170,7 @@
   <xs:element name="GetSpeakersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="GetSpeakersResult" nillable="true" type="q10:ArrayOfPerson" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="GetSpeakersResult" nillable="true" type="q12:ArrayOfPerson" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -171,7 +184,7 @@
   <xs:element name="GetSponsorsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="GetSponsorsResult" nillable="true" type="q11:ArrayOfSponsor" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" minOccurs="0" name="GetSponsorsResult" nillable="true" type="q13:ArrayOfSponsor" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
