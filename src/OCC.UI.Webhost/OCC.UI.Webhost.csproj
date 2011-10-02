@@ -70,6 +70,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\UserNamePasswordHashProvider.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\HomeModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -266,6 +267,15 @@
     <None Include="Service References\CodeCampService\OCC.UI.Webhost.CodeCampService.Announcement.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\CodeCampService\OCC.UI.Webhost.CodeCampService.Event.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CodeCampService\OCC.UI.Webhost.CodeCampService.Person.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CodeCampService\OCC.UI.Webhost.CodeCampService.Session.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\CodeCampService\OCC.UI.Webhost.CodeCampService.Sponsor.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -273,7 +283,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -301,10 +313,7 @@
     <Content Include="Views\Shared\_LogOnPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <None Include="Service References\CodeCampService\CodeCampService.wsdl" />
-    <None Include="Service References\CodeCampService\CodeCampService.xsd">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Service References\CodeCampService\CodeCampService1.wsdl" />
     <None Include="Service References\CodeCampService\CodeCampService1.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -323,6 +332,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\CodeCampService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CodeCampService\CodeCampService.wsdl" />
+    <None Include="Service References\CodeCampService\CodeCampService.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

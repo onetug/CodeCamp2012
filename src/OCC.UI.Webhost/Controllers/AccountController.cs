@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.Routing;
 using System.Web.Security;
+using OCC.UI.Webhost.CodeCampService;
+using OCC.UI.Webhost.Infrastructure;
 using OCC.UI.Webhost.Models;
+using HashProvider = OCC.UI.Webhost.Infrastructure.UserNamePasswordHashProvider;
 
 namespace OCC.UI.Webhost.Controllers
 {
@@ -28,27 +27,34 @@ namespace OCC.UI.Webhost.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (Membership.ValidateUser(model.UserName, model.Password))
+                using (var svc = new CodeCampServiceClient())
                 {
-                    FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
-                    if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
-                        && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
+                    Person authenticatedPerson = null;
+                    Person person = svc.FindPersonByEmail(model.Email);
+                    if (person == null)
                     {
-                        return Redirect(returnUrl);
+                        ModelState.AddModelError("", "");
+                        return View(model); //RedirectToAction("LogOn", "Account");
                     }
                     else
                     {
+                        person.PasswordHash = HashProvider.GenerateUserNamePasswordHash(model.Email, model.Password);
+                        authenticatedPerson = svc.Login(person);
+
+                    }
+
+                    if (authenticatedPerson != null)
+                    {
                         return RedirectToAction("Index", "Home");
+
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "The user name or password provided is incorrect.");
                     }
                 }
-                else
-                {
-                    ModelState.AddModelError("", "The user name or password provided is incorrect.");
-                }
             }
-
-            // If we got this far, something failed, redisplay form
-            return View(model);
+            return View(model); 
         }
 
         //
@@ -77,19 +83,30 @@ namespace OCC.UI.Webhost.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Attempt to register the user
-                MembershipCreateStatus createStatus;
-                Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, true, null, out createStatus);
+                string modifiedTwitterHandle = string.Empty;
 
-                if (createStatus == MembershipCreateStatus.Success)
+                if (!model.Twitter.StartsWith("@"))
                 {
-                    FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
-                    return RedirectToAction("Index", "Home");
+                    const string twitterPrefix = "@";
+                    model.Twitter = string.Format("{0}{1}", twitterPrefix, model.Twitter);
                 }
-                else
+                var hash = 
+                    UserNamePasswordHashProvider.GenerateUserNamePasswordHash(model.Email, model.Password);
+                
+                var newPerson = new Person()
+                                    {
+                                        Email = model.Email, 
+                                        PasswordHash = hash, 
+                                        Agenda = new Session[0],
+                                        Twitter = model.Twitter
+                                    };
+                
+                using (var client = new CodeCampServiceClient())
                 {
-                    ModelState.AddModelError("", ErrorCodeToString(createStatus));
+                    client.RegisterPerson(newPerson);
                 }
+
+                return RedirectToAction("Index", "Home");
             }
 
             // If we got this far, something failed, redisplay form

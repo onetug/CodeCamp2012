@@ -18,7 +18,9 @@
 
             using (CodeCampService.CodeCampServiceClient client = new CodeCampService.CodeCampServiceClient())
             {
-                var announcements = client.GetAnnouncements();
+                int idEvent = 0; // TODO
+
+                var announcements = client.GetAnnouncements(idEvent);
                 foreach (var a in announcements)
                     model.Announcements.Add(new Announcement() { Title = a.Title, Subtitle = a.Subtitle, Content = a.Content });
             }
