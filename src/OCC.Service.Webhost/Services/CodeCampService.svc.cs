@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    using OCC.Service.Webhost.Models;
+    using OCC.Data;
     using OCC.Service.Webhost.Tools;
 
     public class CodeCampService : ICodeCampService
@@ -15,7 +15,7 @@
         {
             using (var db = new OCCDB())
             {
-                var pTo = new Models.Person();
+                var pTo = new OCC.Data.Person();
                 Mapper.CopyProperties(person, pTo);
                 //TODO OFC - Uncomment persistence calls
                 // db.People.Add(pTo);
@@ -114,9 +114,12 @@
             {
                 var result = new List<Announcement>();
 
-                result.Add(new Announcement() { Title = "First Announcement", Subtitle = "by ONETUG", Content = "This is the first announcement." });
-                result.Add(new Announcement() { Title = "Second Announcement", Subtitle = "by ONETUG", Content = "This is the second announcement." });
-                result.Add(new Announcement() { Title = "Third Announcement", Subtitle = "by ONETUG", Content = "This is the third announcement." });
+                foreach (var announcement in db.Events.Find(eventId).Announcements)
+                {
+                    var a = new Announcement();
+                    Mapper.CopyProperties(announcement, a);
+                    result.Add(a);
+                }
 
                 return result;
             }

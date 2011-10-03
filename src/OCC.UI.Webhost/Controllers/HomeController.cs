@@ -18,7 +18,7 @@
 
             using (CodeCampService.CodeCampServiceClient client = new CodeCampService.CodeCampServiceClient())
             {
-                int idEvent = 0; // TODO
+                int idEvent = 2; // TODO
 
                 var announcements = client.GetAnnouncements(idEvent);
                 foreach (var a in announcements)
