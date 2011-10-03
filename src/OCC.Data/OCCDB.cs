@@ -6,6 +6,11 @@
 
     public class OCCDB : DbContext
     {
+        public OCCDB() : base("OCC2012") 
+        { 
+        
+        }
+
         public DbSet<Event> Events { get; set; }
 
         public DbSet<Person> People { get; set; }
