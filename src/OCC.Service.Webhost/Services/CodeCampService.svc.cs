@@ -94,10 +94,11 @@
             using (OCCDB db = new OCCDB())
             {
                 var e = db.Events.Find(eventId);
-                var result = new Event();
-                Mapper.CopyProperties(e, result);
 
-                return result;
+                if (e == null)
+                    throw new ArgumentException("Event not found");
+
+                return e.AsEvent();
             }
         }
 

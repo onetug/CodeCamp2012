@@ -1,0 +1,27 @@
+﻿@model OCC.UI.Webhost.Models.SessionsModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+
+@foreach (var track in ViewData.Model.Tracks)
+{
+    <div>
+    
+    <h3>@track.Name</h3>
+
+    @foreach (var sessions in track.Sessions)
+    {
+        <div>
+        
+        <h4>@sessions.Name</h4>
+    
+        </div>
+    }
+
+    </div>
+}
+
+</div>

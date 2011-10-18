@@ -21,12 +21,27 @@ namespace OCC.UI.Webhost
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // 1. onetug.org -> goes to the current event
+            // 2. onetug.org/sessions
+            // 2. onetug.org/occ2012
+            // 3. onetug.org/occ2012/sessions
+
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+                new { eventid = 2, controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
 
+            routes.MapRoute(
+                "a",
+                "{eventid}/{controller}/{action}/{id}",
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional });
+
+            //routes.MapRoute(
+            //    "Default", // Route name
+            //    "{controller}/{action}/{id}", // URL with parameters
+            //    new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+            //);
         }
 
         protected void Application_Start()

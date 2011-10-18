@@ -1,13 +1,13 @@
-﻿using System;
-using System.Web.Mvc;
-using System.Web.Security;
-using OCC.UI.Webhost.CodeCampService;
-using OCC.UI.Webhost.Infrastructure;
-using OCC.UI.Webhost.Models;
-using HashProvider = OCC.UI.Webhost.Infrastructure.UserNamePasswordHashProvider;
-
-namespace OCC.UI.Webhost.Controllers
+﻿namespace OCC.UI.Webhost.Controllers
 {
+    using System;
+    using System.Web.Mvc;
+    using System.Web.Security;
+    using OCC.UI.Webhost.CodeCampService;
+    using OCC.UI.Webhost.Infrastructure;
+    using OCC.UI.Webhost.Models;
+    using HashProvider = OCC.UI.Webhost.Infrastructure.UserNamePasswordHashProvider;
+
     public class AccountController : Controller
     {
 
@@ -97,7 +97,7 @@ namespace OCC.UI.Webhost.Controllers
                                     {
                                         Email = model.Email, 
                                         PasswordHash = hash, 
-                                        Agenda = new Session[0],
+                                        Agenda = new OCC.UI.Webhost.CodeCampService.Session[0],
                                         Twitter = model.Twitter
                                     };
                 

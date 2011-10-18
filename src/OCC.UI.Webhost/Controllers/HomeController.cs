@@ -7,20 +7,22 @@
     using System.Web.Mvc;
 
     using OCC.UI.Webhost.Models;
+    
+    //
+    // GET: /Home/
 
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(int eventid)
         {
             HomeModel model = new HomeModel();
 
-            ViewBag.Message = "Orlando CodeCamp 2012";
-
             using (CodeCampService.CodeCampServiceClient client = new CodeCampService.CodeCampServiceClient())
             {
-                int idEvent = 2; // TODO
+                var e = client.GetEvent(eventid);
+                ViewBag.Message = e.Name;
 
-                var announcements = client.GetAnnouncements(idEvent);
+                var announcements = client.GetAnnouncements(eventid);
                 foreach (var a in announcements)
                     model.Announcements.Add(new Announcement() { Title = a.Title, Subtitle = a.Subtitle, Content = a.Content });
             }
