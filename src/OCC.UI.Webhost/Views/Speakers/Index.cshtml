@@ -1,0 +1,18 @@
+﻿@model OCC.UI.Webhost.Models.SpeakersModel
+
+@{
+    ViewBag.Title = "Speakers";
+}
+
+<div>
+
+@foreach (var speaker in ViewData.Model.Speakers)
+{
+    <div>
+
+    <h3>@speaker.Name</h3>
+    
+    </div>
+}
+
+</div>

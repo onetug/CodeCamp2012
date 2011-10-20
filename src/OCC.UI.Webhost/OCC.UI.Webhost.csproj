@@ -68,6 +68,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SessionsController.cs" />
+    <Compile Include="Controllers\SpeakersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -75,6 +76,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\HomeModels.cs" />
     <Compile Include="Models\SessionsModels.cs" />
+    <Compile Include="Models\SpeakersModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\CodeCampService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -323,6 +325,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\Sessions\Index.cshtml" />
+    <Content Include="Views\Speakers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

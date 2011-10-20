@@ -30,7 +30,6 @@
     {
         public IList<Track> Tracks { get; set; }
 
-
         public SessionsModel()
         {
             Tracks = new List<Track>();

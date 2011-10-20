@@ -11,7 +11,7 @@
     //
     // GET: /Sessions/
 
-    public class SessionsController : Controller
+    public class SessionsController : AbstractController
     {
 
         public ActionResult Index(int eventid)
