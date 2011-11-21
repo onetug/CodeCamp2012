@@ -66,13 +66,31 @@
   <ItemGroup>
     <Compile Include="Controllers\AbstractController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AgendaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MetroTileController.cs" />
+    <Compile Include="Controllers\SessionsController.cs" />
+    <Compile Include="Controllers\SpeakersController.cs" />
+    <Compile Include="Controllers\SponsorsController.cs" />
+    <Compile Include="Controllers\VenueController.cs" />
+    <Compile Include="Controllers\VolunteerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\HtmlExtensionHelpers.cs" />
     <Compile Include="Infrastructure\UserNamePasswordHashProvider.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\AgendaViewModel.cs" />
+    <Compile Include="Models\AnnouncementViewModel.cs" />
     <Compile Include="Models\HomeModels.cs" />
+    <Compile Include="Models\LayoutViewModel.cs" />
+    <Compile Include="Models\MetroTileViewModel.cs" />
+    <Compile Include="Models\SessionViewModel.cs" />
+    <Compile Include="Models\SpeakerViewModel.cs" />
+    <Compile Include="Models\SponsorsViewModel.cs" />
+    <Compile Include="Models\VenueViewModel.cs" />
+    <Compile Include="Models\VolunteerActivityViewModel.cs" />
+    <Compile Include="Models\VolunteerViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\CodeCampService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -178,12 +196,22 @@
     <Content Include="Content\themes\Metro\BlackWithoutCircle\48x48\share.png" />
     <Content Include="Content\themes\Metro\BlackWithoutCircle\48x48\upload.png" />
     <Content Include="Content\themes\Metro\BlackWithoutCircle\48x48\video.png" />
+    <Content Include="Content\themes\Metro\Blue Tile Background.OnHover.png" />
+    <Content Include="Content\themes\Metro\Blue Tile Background.png" />
+    <Content Include="Content\themes\Metro\Double Blue Tile Background.OnHover.png" />
+    <Content Include="Content\themes\Metro\Double Blue Tile Background.png" />
+    <Content Include="Content\themes\Metro\Double Green Tile Background.OnHover.png" />
+    <Content Include="Content\themes\Metro\Double Green Tile Background.png" />
+    <Content Include="Content\themes\Metro\Green Tile Background.OnHover.png" />
+    <Content Include="Content\themes\Metro\Green Tile Background.png" />
     <Content Include="Content\themes\Metro\Images\onetug.113x132.jpg" />
     <Content Include="Content\themes\Metro\Images\OnetugTree.113x132.AlphaBackground.png" />
     <Content Include="Content\themes\Metro\Images\OnetugTree.Black.43x51.AlphaBackground.png" />
     <Content Include="Content\themes\Metro\Images\OnetugTree.White.43x51.AlphaBackground.png" />
     <Content Include="Content\themes\Metro\Key Sample.png" />
     <Content Include="Content\themes\Metro\metro icon pack.png" />
+    <Content Include="Content\themes\Metro\Transparent Tile Background.OnHover.png" />
+    <Content Include="Content\themes\Metro\Transparent Tile Background.png" />
     <Content Include="Content\themes\Metro\WhiteIcons\48x48\add.png" />
     <Content Include="Content\themes\Metro\WhiteIcons\48x48\back.png" />
     <Content Include="Content\themes\Metro\WhiteIcons\48x48\basecircle.png" />
@@ -250,6 +278,9 @@
     <Content Include="Content\themes\Metro\WhiteWithoutCircle\48x48\upload.png" />
     <Content Include="Content\themes\Metro\WhiteWithoutCircle\48x48\video.png" />
     <Content Include="Content\themes\Shared\12_col.gif" />
+    <Content Include="Content\themes\Shared\16_col.gif" />
+    <Content Include="Content\themes\Shared\BlankUser.png" />
+    <Content Include="Content\themes\Shared\onetug.113x132.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.5.1.js" />
@@ -261,6 +292,9 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
+    <None Include="Content\themes\Metro\Double Tile Background.pdn" />
+    <None Include="Content\themes\Metro\MetroIcons\MetroIcons.ai" />
+    <None Include="Content\themes\Metro\SingleTile Background.pdn" />
     <None Include="Service References\CodeCampService\CodeCampService.disco" />
     <None Include="Service References\CodeCampService\configuration91.svcinfo" />
     <None Include="Service References\CodeCampService\configuration.svcinfo" />
@@ -320,6 +354,16 @@
     <None Include="Service References\CodeCampService\CodeCampService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\Agenda\Index.cshtml" />
+    <Content Include="Views\Sessions\Index.cshtml" />
+    <Content Include="Views\Shared\_DoubleMetroTile.cshtml" />
+    <Content Include="Views\Shared\_SingleMetroTile.cshtml" />
+    <Content Include="Views\Shared\_tweet.cshtml" />
+    <Content Include="Views\Shared\_twitterMetroTile.cshtml" />
+    <Content Include="Views\Speakers\Index.cshtml" />
+    <Content Include="Views\Sponsors\Index.cshtml" />
+    <Content Include="Views\Venue\Index.cshtml" />
+    <Content Include="Views\Volunteer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
