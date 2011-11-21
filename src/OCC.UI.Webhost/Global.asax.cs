@@ -21,6 +21,10 @@ namespace OCC.UI.Webhost
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute("Sponsors",
+                            "Sponsors/{action}/{id}",
+                            new {controller = "Sponsors", action = "Index", id = UrlParameter.Optional});
+            
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
