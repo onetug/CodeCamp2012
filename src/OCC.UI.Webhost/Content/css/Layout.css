@@ -18,12 +18,27 @@ body
 #header
 {
 	margin-top: 3.5em;
-	margin-bottom: 2.0em;	
+	margin-bottom: 2.0em;
+	position: relative;
+}
+
+#header a
+{
+	height: 60px;
+	width: 620px;
+	position: absolute;
+	top: 10px;	
 }
 
 #header, h1
 {
 	float: left;
+}
+
+#header #dateAndVenue
+{
+	float: left;
+	margin-top: -5px;
 }
 
 .onetugTree
