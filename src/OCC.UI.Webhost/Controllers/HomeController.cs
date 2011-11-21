@@ -22,7 +22,7 @@
 
                 var announcements = client.GetAnnouncements(idEvent);
                 foreach (var a in announcements)
-                    model.Announcements.Add(new Announcement() { Title = a.Title, Subtitle = a.Subtitle, Content = a.Content });
+                    model.Announcements.Add(new AnnouncementViewModel { Title = a.Title, Subtitle = a.Subtitle, Content = a.Content });
             }
 
             return View(model);
