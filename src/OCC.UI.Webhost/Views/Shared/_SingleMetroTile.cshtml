@@ -1,0 +1,34 @@
+﻿@using OCC.UI.Webhost.Infrastructure
+@using OCC.UI.Webhost.Models
+@model MetroTileViewModel
+
+<div class="singleTile @Model.TileBackgroundCssClass">
+    <div id="outerSingleTileContent">
+        <div id="middleSingleTileContent">
+            @if (!string.IsNullOrEmpty(Model.TileLinkActionName))
+            {<a href="@Url.Action(Model.TileLinkActionName, Model.TileLinkControllerName)" ></a>}
+            <div id="innerSingleTileContent">
+                @{ IList<MetroTileIcon> iconList = Model.MetroTileIcons; }
+                @foreach(var t in iconList)
+                {
+                    if(t == iconList[0])
+                    {
+                        @Html.ImageTag(t, "iconVisible")
+                    }
+                    else
+                    {
+                        @Html.ImageTag(t, "iconHidden")
+                    }
+                }
+                @if(iconList.Count < 1)
+                {
+                    @Html.ImageTag(Model.DefaultTileIcon, "iconVisible")
+                }
+            </div>
+        </div>
+    </div>
+    <div class="tileFooter">
+        <h6 class="labelLowerLeft">@Model.TileDisplayName</h6>    
+    </div>
+    
+</div>

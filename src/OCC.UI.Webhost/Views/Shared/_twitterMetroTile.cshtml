@@ -1,0 +1,20 @@
+﻿@using OCC.UI.Webhost.Models
+@model TwitterMetroTileViewModel
+           
+<div id="twitterTile" class="doubleTile @Model.TileBackgroundCssClass">
+    <div id="mainTwitterContent">
+        @foreach (var tweet in Model.Tweets)
+        {
+            tweet.ActiveCssClass = Model.Tweets.Count < 3 ? "tweetVisible" : "tweetHidden";
+            @Html.Partial("_tweet", tweet)
+        }
+    </div>
+    <div class="tileFooter">
+        <h6 class="labelLowerLeft">@Model.TileDisplayName</h6>
+    </div>
+    <div class="followButtonDiv">
+        <a href="https://twitter.com/ONETUG" class="twitter-follow-button" data-show-count="false"
+           data-link-color="FFA500">Follow @@ONETUG</a>
+        <script src="//platform.twitter.com/widgets.js" type="text/javascript"> </script>
+    </div>
+</div>

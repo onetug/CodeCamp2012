@@ -1,0 +1,17 @@
+﻿@using OCC.UI.Webhost.Infrastructure
+@model OCC.UI.Webhost.Models.TweetViewModel
+           
+<div class="@Model.ActiveCssClass">
+    <div id="outerTweetPicture">
+        <div id="middleTweetPicture">
+            <div id="innerTweetPicture">
+                @Html.ImageTag(Model.ProfilePhoto)
+            </div>
+        </div>
+    </div>
+
+    <div class="tweetContent">
+        <p><a href="http://twitter.com/@Model.ProfileName">@Model.ProfileName</a>: @Model.TweetContent</p>
+    </div>
+</div>
+
