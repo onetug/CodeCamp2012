@@ -85,8 +85,8 @@
     <Compile Include="Models\HomeModels.cs" />
     <Compile Include="Models\LayoutViewModel.cs" />
     <Compile Include="Models\MetroTileViewModel.cs" />
-    <Compile Include="Models\SessionViewModel.cs" />
-    <Compile Include="Models\SpeakerViewModel.cs" />
+    <Compile Include="Models\SessionsModels.cs" />
+    <Compile Include="Models\SpeakersModels.cs" />
     <Compile Include="Models\SponsorsViewModel.cs" />
     <Compile Include="Models\VenueViewModel.cs" />
     <Compile Include="Models\VolunteerActivityViewModel.cs" />
@@ -398,17 +398,6 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>61920</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
           <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
