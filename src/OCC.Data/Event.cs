@@ -1,4 +1,4 @@
-﻿namespace OCC.Service.Webhost.Models
+﻿namespace OCC.Data
 {
     using System;
     using System.Collections.Generic;
@@ -29,13 +29,13 @@
 
         public string Zip { get; set; }
 
-        public virtual IList<Announcement> Announcements { get; set; }
+        public virtual ICollection<Announcement> Announcements { get; set; }
 
-        public virtual IList<Session> Sessions { get; set; }
+        public virtual ICollection<Session> Sessions { get; set; }
 
-        public virtual IList<Sponsor> Sponsors { get; set; }
+        public virtual ICollection<Sponsor> Sponsors { get; set; }
 
-        public virtual IList<Person> Attendees { get; set; }
+        public virtual ICollection<Person> Attendees { get; set; }
 
         public Event()
         {

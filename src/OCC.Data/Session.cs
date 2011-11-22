@@ -1,4 +1,4 @@
-﻿namespace OCC.Service.Webhost.Models
+﻿namespace OCC.Data
 {
     using System;
 
