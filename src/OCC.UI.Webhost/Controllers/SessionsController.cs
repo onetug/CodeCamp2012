@@ -18,7 +18,7 @@ namespace OCC.UI.Webhost.Controllers
         {
             ViewBag.Message = "Code Camp";
 
-            SessionsModel model = new SessionsModel();
+            SessionViewModel model = new SessionViewModel();
 
             model.Tracks.Add(new Track() { Name = "Track 1" });
 

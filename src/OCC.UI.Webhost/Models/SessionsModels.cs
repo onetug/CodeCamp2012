@@ -26,11 +26,11 @@
         }
     }
 
-    public class SessionsModel
+    public class SessionViewModel
     {
         public IList<Track> Tracks { get; set; }
 
-        public SessionsModel()
+        public SessionViewModel()
         {
             Tracks = new List<Track>();
         }

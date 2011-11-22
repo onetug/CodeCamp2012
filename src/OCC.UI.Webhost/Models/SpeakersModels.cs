@@ -22,11 +22,11 @@
         public string TwitterHandle { get; set; }
     }
 
-    public class SpeakersModel
+    public class SpeakerViewModel
     {
         public IList<Speaker> Speakers { get; set; }
 
-        public SpeakersModel()
+        public SpeakerViewModel()
         {
             Speakers = new List<Speaker>();
         }

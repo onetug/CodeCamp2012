@@ -1,27 +1,21 @@
-@model OCC.UI.Webhost.Models.SessionsModel
+@using OCC.UI.Webhost.Models
+@model SessionViewModel
 
 @{
     ViewBag.Title = "Sessions";
 }
 
 <div>
-
-@foreach (var track in ViewData.Model.Tracks)
-{
-    <div>
-    
-    <h3>@track.Name</h3>
-
-    @foreach (var sessions in track.Sessions)
+    @foreach (var track in ViewData.Model.Tracks)
     {
         <div>
-        
-        <h4>@sessions.Name</h4>
-    
+            <h3>@track.Name</h3>
+            @foreach (var sessions in track.Sessions)
+            {
+                <div>
+                    <h4>@sessions.Name</h4>
+                </div>
+            }
         </div>
     }
-
-    </div>
-}
-
 </div>

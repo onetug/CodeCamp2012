@@ -15,7 +15,7 @@ namespace OCC.UI.Webhost.Controllers
 
         public ActionResult Index(int eventid)
         {
-            SpeakersModel model = new SpeakersModel();
+            SpeakerViewModel model = new SpeakerViewModel();
 
             model.Speakers.Add(new Speaker() { Name = "John Smith" });
             model.Speakers.Add(new Speaker() { Name = "Peter Smith" });
