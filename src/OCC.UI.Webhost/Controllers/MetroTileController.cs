@@ -162,7 +162,7 @@ namespace OCC.UI.Webhost.Controllers
         {
             var twitterTileViewModel = new TwitterMetroTileViewModel 
                                        {
-                                           TileBackgroundCssClass = "doubleTileGreenImage",
+                                           TileBackgroundCssClass = "doubleTileBlueImage",
                                            TileDisplayName = "#OrlandoCC"
                                        };
 
