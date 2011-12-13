@@ -1,9 +1,10 @@
 ﻿namespace OCC.Service.Webhost.Services
 {
+    using System.Collections.Generic;
     using System.Runtime.Serialization;
 
     [DataContract]
-    public class Sponsor
+    public class Track
     {
         [DataMember]
         public int ID { get; set; }
@@ -15,12 +16,6 @@
         public string Description { get; set; }
 
         [DataMember]
-        public string SponsorshipLevel { get; set; }
-
-        [DataMember]
-        public string ImageUrl { get; set; }
-
-        [DataMember]
-        public string WebsiteUrl { get; set; }
+        public virtual IList<Session> Sessions { get; set; }
     }
 }

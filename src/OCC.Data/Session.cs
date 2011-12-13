@@ -8,8 +8,6 @@
 
         public string Name { get; set; }
 
-        public string Track { get; set; }
-
         public string Description { get; set; }
 
         public Person Speaker { get; set; }

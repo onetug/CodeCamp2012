@@ -66,31 +66,25 @@
   <ItemGroup>
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AgendaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MetroTileController.cs" />
-    <Compile Include="Controllers\SessionsController.cs" />
-    <Compile Include="Controllers\SpeakersController.cs" />
-    <Compile Include="Controllers\SponsorsController.cs" />
-    <Compile Include="Controllers\VenueController.cs" />
-    <Compile Include="Controllers\VolunteerController.cs" />
+    <Compile Include="Controllers\SpeakerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\HtmlExtensionHelpers.cs" />
     <Compile Include="Infrastructure\UserNamePasswordHashProvider.cs" />
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\AgendaViewModel.cs" />
-    <Compile Include="Models\AnnouncementViewModel.cs" />
-    <Compile Include="Models\HomeModels.cs" />
+    <Compile Include="Models\Announcement.cs" />
+    <Compile Include="Models\Event.cs" />
     <Compile Include="Models\LayoutViewModel.cs" />
     <Compile Include="Models\MetroTileViewModel.cs" />
-    <Compile Include="Models\SessionsModels.cs" />
-    <Compile Include="Models\SpeakersModels.cs" />
-    <Compile Include="Models\SponsorsViewModel.cs" />
-    <Compile Include="Models\VenueViewModel.cs" />
-    <Compile Include="Models\VolunteerActivityViewModel.cs" />
-    <Compile Include="Models\VolunteerViewModel.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Session.cs" />
+    <Compile Include="Models\Speaker.cs" />
+    <Compile Include="Models\Sponsor.cs" />
+    <Compile Include="Models\Track.cs" />
+    <Compile Include="Models\Volunteer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\CodeCampService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -102,6 +96,7 @@
     <Content Include="Content\css\960_12_col.css" />
     <Content Include="Content\css\Layout.css" />
     <Content Include="Content\css\reset.css" />
+    <Content Include="Content\css\styles.css" />
     <Content Include="Content\css\text.css" />
     <Content Include="Content\css\Tiles.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -313,6 +308,9 @@
     <None Include="Service References\CodeCampService\OCC.UI.Webhost.CodeCampService.Sponsor.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\CodeCampService\OCC.UI.Webhost.CodeCampService.Track.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\CodeCampService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -354,16 +352,18 @@
     <None Include="Service References\CodeCampService\CodeCampService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\Agenda\Index.cshtml" />
-    <Content Include="Views\Sessions\Index.cshtml" />
+    <Content Include="Views\Home\Agenda.cshtml" />
     <Content Include="Views\Shared\_DoubleMetroTile.cshtml" />
     <Content Include="Views\Shared\_SingleMetroTile.cshtml" />
     <Content Include="Views\Shared\_tweet.cshtml" />
     <Content Include="Views\Shared\_twitterMetroTile.cshtml" />
-    <Content Include="Views\Speakers\Index.cshtml" />
-    <Content Include="Views\Sponsors\Index.cshtml" />
-    <Content Include="Views\Venue\Index.cshtml" />
-    <Content Include="Views\Volunteer\Index.cshtml" />
+    <Content Include="Views\Home\Speakers.cshtml" />
+    <Content Include="Views\Home\Sponsors.cshtml" />
+    <Content Include="Views\Home\Venue.cshtml" />
+    <Content Include="Views\Home\Volunteers.cshtml" />
+    <Content Include="Views\Speaker\Create.cshtml" />
+    <Content Include="Views\Speaker\Edit.cshtml" />
+    <Content Include="Views\Speaker\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -55,10 +55,10 @@
       <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Sessions" nillable="true" type="tns:ArrayOfSession" />
       <xs:element minOccurs="0" name="Sponsors" nillable="true" type="tns:ArrayOfSponsor" />
       <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tracks" nillable="true" type="tns:ArrayOfTrack" />
       <xs:element minOccurs="0" name="TwitterHashTag" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Zip" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -99,7 +99,23 @@
       <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SponsorshipLevel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WebsiteUrl" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Sponsor" nillable="true" type="tns:Sponsor" />
+  <xs:complexType name="ArrayOfTrack">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Track" nillable="true" type="tns:Track" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrack" nillable="true" type="tns:ArrayOfTrack" />
+  <xs:complexType name="Track">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sessions" nillable="true" type="tns:ArrayOfSession" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Track" nillable="true" type="tns:Track" />
 </xs:schema>

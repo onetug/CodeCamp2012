@@ -94,6 +94,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetTracks">
+      <soap:operation soapAction="http://onetug.org/2012/CodeCampService/ICodeCampService/GetTracks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrack">
+      <soap:operation soapAction="http://onetug.org/2012/CodeCampService/ICodeCampService/GetTrack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetAnnouncements">
       <soap:operation soapAction="http://onetug.org/2012/CodeCampService/ICodeCampService/GetAnnouncements" style="document" />
       <wsdl:input>
@@ -114,6 +132,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetSpeakers">
       <soap:operation soapAction="http://onetug.org/2012/CodeCampService/ICodeCampService/GetSpeakers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVolunteers">
+      <soap:operation soapAction="http://onetug.org/2012/CodeCampService/ICodeCampService/GetVolunteers" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -47,7 +47,7 @@
         public virtual IList<Announcement> Announcements { get; set; }
 
         [DataMember]
-        public virtual IList<Session> Sessions { get; set; }
+        public virtual IList<Track> Tracks { get; set; }
 
         [DataMember]
         public virtual IList<Sponsor> Sponsors { get; set; }
@@ -58,7 +58,7 @@
         public Event()
         {
             Announcements = new List<Announcement>();
-            Sessions = new List<Session>();
+            Tracks = new List<Track>();
             Sponsors = new List<Sponsor>();
             Attendees = new List<Person>();
         }

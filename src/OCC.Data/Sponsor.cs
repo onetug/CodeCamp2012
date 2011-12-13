@@ -11,5 +11,7 @@
         public string SponsorshipLevel { get; set; }
 
         public string ImageUrl { get; set; }
+
+        public string WebsiteUrl { get; set; }
     }
 }

@@ -1,0 +1,18 @@
+﻿@using OCC.UI.Webhost.Models;
+
+@model List<Sponsor>
+
+@{
+    ViewBag.Title = "Sponsors";
+}
+
+<h3>Sponsors</h3>
+
+<div>
+
+@foreach (var sponsor in ViewData.Model)
+{
+    <div class="field-name">@sponsor.Name</div>
+}
+
+</div>

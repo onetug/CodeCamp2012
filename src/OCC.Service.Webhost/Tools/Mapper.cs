@@ -52,5 +52,17 @@
 
             return result;
         }
+
+        public static Track AsTrack(this OCC.Data.Track t)
+        {
+            Track track = new Track()
+            {
+                ID = t.ID,
+                Name = t.Name,
+                Description = t.Description
+            };
+
+            return track;
+        }
     }
 }

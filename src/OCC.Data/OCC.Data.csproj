@@ -53,6 +53,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="Sponsor.cs" />
+    <Compile Include="Track.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

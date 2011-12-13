@@ -67,6 +67,18 @@
   <wsdl:message name="ICodeCampService_UpdateEvent_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateEventResponse" />
   </wsdl:message>
+  <wsdl:message name="ICodeCampService_GetTracks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTracks" />
+  </wsdl:message>
+  <wsdl:message name="ICodeCampService_GetTracks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTracksResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICodeCampService_GetTrack_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTrack" />
+  </wsdl:message>
+  <wsdl:message name="ICodeCampService_GetTrack_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTrackResponse" />
+  </wsdl:message>
   <wsdl:message name="ICodeCampService_GetAnnouncements_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAnnouncements" />
   </wsdl:message>
@@ -84,6 +96,12 @@
   </wsdl:message>
   <wsdl:message name="ICodeCampService_GetSpeakers_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSpeakersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICodeCampService_GetVolunteers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVolunteers" />
+  </wsdl:message>
+  <wsdl:message name="ICodeCampService_GetVolunteers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVolunteersResponse" />
   </wsdl:message>
   <wsdl:message name="ICodeCampService_GetSponsors_InputMessage">
     <wsdl:part name="parameters" element="tns:GetSponsors" />
@@ -132,6 +150,14 @@
       <wsdl:input wsaw:Action="http://onetug.org/2012/CodeCampService/ICodeCampService/UpdateEvent" message="tns:ICodeCampService_UpdateEvent_InputMessage" />
       <wsdl:output wsaw:Action="http://onetug.org/2012/CodeCampService/ICodeCampService/UpdateEventResponse" message="tns:ICodeCampService_UpdateEvent_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetTracks">
+      <wsdl:input wsaw:Action="http://onetug.org/2012/CodeCampService/ICodeCampService/GetTracks" message="tns:ICodeCampService_GetTracks_InputMessage" />
+      <wsdl:output wsaw:Action="http://onetug.org/2012/CodeCampService/ICodeCampService/GetTracksResponse" message="tns:ICodeCampService_GetTracks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrack">
+      <wsdl:input wsaw:Action="http://onetug.org/2012/CodeCampService/ICodeCampService/GetTrack" message="tns:ICodeCampService_GetTrack_InputMessage" />
+      <wsdl:output wsaw:Action="http://onetug.org/2012/CodeCampService/ICodeCampService/GetTrackResponse" message="tns:ICodeCampService_GetTrack_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetAnnouncements">
       <wsdl:input wsaw:Action="http://onetug.org/2012/CodeCampService/ICodeCampService/GetAnnouncements" message="tns:ICodeCampService_GetAnnouncements_InputMessage" />
       <wsdl:output wsaw:Action="http://onetug.org/2012/CodeCampService/ICodeCampService/GetAnnouncementsResponse" message="tns:ICodeCampService_GetAnnouncements_OutputMessage" />
@@ -143,6 +169,10 @@
     <wsdl:operation name="GetSpeakers">
       <wsdl:input wsaw:Action="http://onetug.org/2012/CodeCampService/ICodeCampService/GetSpeakers" message="tns:ICodeCampService_GetSpeakers_InputMessage" />
       <wsdl:output wsaw:Action="http://onetug.org/2012/CodeCampService/ICodeCampService/GetSpeakersResponse" message="tns:ICodeCampService_GetSpeakers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVolunteers">
+      <wsdl:input wsaw:Action="http://onetug.org/2012/CodeCampService/ICodeCampService/GetVolunteers" message="tns:ICodeCampService_GetVolunteers_InputMessage" />
+      <wsdl:output wsaw:Action="http://onetug.org/2012/CodeCampService/ICodeCampService/GetVolunteersResponse" message="tns:ICodeCampService_GetVolunteers_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetSponsors">
       <wsdl:input wsaw:Action="http://onetug.org/2012/CodeCampService/ICodeCampService/GetSponsors" message="tns:ICodeCampService_GetSponsors_InputMessage" />

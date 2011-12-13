@@ -80,6 +80,7 @@
     <Compile Include="Services\Sponsor.cs" />
     <Compile Include="Services\ICodeCampService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Track.cs" />
     <Compile Include="Tools\Mapper.cs" />
   </ItemGroup>
   <ItemGroup>

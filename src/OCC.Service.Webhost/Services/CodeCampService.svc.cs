@@ -107,6 +107,35 @@
             throw new NotImplementedException();
         }
 
+        // Track
+
+        public IList<Track> GetTracks(int eventId)
+        {
+            using (OCCDB db = new OCCDB())
+            {
+                var e = db.Events.Find(eventId);
+
+                if (e == null)
+                    throw new ArgumentException("Event not found");
+
+                List<Track> result = new List<Track>();
+                foreach (var track in e.Tracks)
+                    result.Add(track.AsTrack());
+
+                return result;
+            }
+        }
+
+        public Track GetTrack(int id)
+        {
+            using (OCCDB db = new OCCDB())
+            {
+                var t = db.Tracks.Find(id);
+                return t.AsTrack();
+            }
+        }
+
+
         // ... 
 
         public IList<Announcement> GetAnnouncements(int eventId)
@@ -128,57 +157,74 @@
 
         public IList<Session> GetSessions(int idEvent)
         {
-            using (OCCDB db = new OCCDB())
-            {
-                var sessions = db.Events.Find(idEvent).Sessions
-                    .OrderBy(s => s.Track)
-                    .OrderBy(s => s.StartTime)
-                    .ToList();
+            throw new NotImplementedException();
 
-                var result = new List<Session>();
+            //using (OCCDB db = new OCCDB())
+            //{
+            //    var sessions = db.Events.Find(idEvent).Sessions
+            //        .OrderBy(s => s.Track)
+            //        .OrderBy(s => s.StartTime)
+            //        .ToList();
 
-                foreach (var session in sessions)
-                {
-                    Session s = new Session();
-                    Mapper.CopyProperties(session, s);
-                    result.Add(s);
-                }
+            //    var result = new List<Session>();
 
-                return result;
-            }
+            //    foreach (var session in sessions)
+            //    {
+            //        Session s = new Session();
+            //        Mapper.CopyProperties(session, s);
+            //        result.Add(s);
+            //    }
+
+            //    return result;
+            //}
         }
 
         public IList<Person> GetSpeakers(int idEvent)
         {
-            using (OCCDB db = new OCCDB())
-            {
-                var speakers = (from session in db.Events.Find(idEvent).Sessions
-                        select session.Speaker)
-                        .Distinct()
-                        .OrderBy(s => s.FirstName + " " + s.LastName)
-                        .ToList();
+            //using (OCCDB db = new OCCDB())
+            //{
+            //    var speakers = (from session in db.Events.Find(idEvent).Sessions
+            //            select session.Speaker)
+            //            .Distinct()
+            //            .OrderBy(s => s.FirstName + " " + s.LastName)
+            //            .ToList();
 
-                var result = new List<Person>();
+            //    var result = new List<Person>();
 
-                foreach (var speaker in speakers)
-                {
-                    Person s = new Person();
-                    Mapper.CopyProperties(speaker, s);
-                    result.Add(s);
-                }
+            //    foreach (var speaker in speakers)
+            //    {
+            //        Person s = new Person();
+            //        Mapper.CopyProperties(speaker, s);
+            //        result.Add(s);
+            //    }
 
-                return result;
-            }
+            //    return result;
+            //}
+
+            List<Person> result = new List<Person>();
+            result.Add(new Person() { ID = 1, FirstName = "John", LastName = "Smith" });
+            result.Add(new Person() { ID = 2, FirstName = "Peter", LastName = "Smith" });
+            result.Add(new Person() { ID = 3, FirstName = "Bob", LastName = "Smith" });
+            return result;
+        }
+
+        public IList<Person> GetVolunteers(int idEvent)
+        {
+            List<Person> result = new List<Person>();
+            result.Add(new Person() { ID = 1, FirstName = "John", LastName = "Jones" });
+            result.Add(new Person() { ID = 2, FirstName = "Peter", LastName = "Jones" });
+            result.Add(new Person() { ID = 3, FirstName = "Bob", LastName = "Jones" });
+            return result;
         }
 
         public IList<Sponsor> GetSponsors(int idEvent)
         {
-            var sponsorList = new List<Sponsor>(2);
+            var results = new List<Sponsor>();
 
-            sponsorList.Add(new Sponsor { Name = "Microsoft" });
-            sponsorList.Add(new Sponsor { Name = "DevExpress" });
+            results.Add(new Sponsor { ID = 1, Name = "Microsoft" });
+            results.Add(new Sponsor { ID = 2, Name = "DevExpress" });
 
-            return sponsorList;
+            return results;
         }
     }
 }

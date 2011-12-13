@@ -4,7 +4,7 @@ using OCC.UI.Webhost.Models;
 
 namespace OCC.UI.Webhost.Controllers
 {
-    public class MetroTileController : Controller
+    public class MetroTileController : BaseController
     {
         private readonly MetroTileIcon defaultDoubleIcon = new MetroTileIcon(110, 278)
                                                            {
@@ -63,15 +63,14 @@ namespace OCC.UI.Webhost.Controllers
         {
             var tileViewModel = new MetroTileViewModel
                                 {
-                                    TileLinkActionName = "SponsorInFocus",
-                                    TileLinkControllerName = "Sponsors",
+                                    TileLinkActionName = "Sponsors",
+                                    TileLinkControllerName = "Home",
                                     TileDisplayName = "Sponsors",
                                     TileBackgroundCssClass = "singleTileGreenImage",
                                     DefaultTileIcon = this.defaultSingleIcon
                                 };
-            using (var serviceClient = new CodeCampServiceClient())
-            {
-                Sponsor[] sponsors = serviceClient.GetSponsors(1);
+
+                var sponsors = service.GetSponsors(1);
                 foreach (var sponsor in sponsors)
                 {
                     if (!string.IsNullOrEmpty(sponsor.Name) && !string.IsNullOrEmpty(sponsor.ImageUrl))
@@ -84,7 +83,6 @@ namespace OCC.UI.Webhost.Controllers
                                                          });
                     }
                 }
-            }
 
             return PartialView("_SingleMetroTile", tileViewModel);
         }
@@ -94,8 +92,8 @@ namespace OCC.UI.Webhost.Controllers
         {
             var tileViewModel = new MetroTileViewModel
                                 {
-                                    TileLinkActionName = "Index",
-                                    TileLinkControllerName = "Agenda",
+                                    TileLinkActionName = "Agenda",
+                                    TileLinkControllerName = "Home",
                                     TileDisplayName = "Agenda",
                                     TileBackgroundCssClass = "singleTileGreenImage",
                                     DefaultTileIcon = this.defaultSingleIcon
@@ -109,8 +107,8 @@ namespace OCC.UI.Webhost.Controllers
         {
             var tileViewModel = new MetroTileViewModel
                                 {
-                                    TileLinkActionName = "Index",
-                                    TileLinkControllerName = "Venue",
+                                    TileLinkActionName = "Venue",
+                                    TileLinkControllerName = "Home",
                                     TileDisplayName = "Venue",
                                     TileBackgroundCssClass = "singleTileGreenImage",
                                     DefaultTileIcon = this.defaultSingleIcon
@@ -124,8 +122,8 @@ namespace OCC.UI.Webhost.Controllers
         {
             var tileViewModel = new MetroTileViewModel
                                 {
-                                    TileLinkActionName = "Index",
-                                    TileLinkControllerName = "Speakers",
+                                    TileLinkActionName = "Speakers",
+                                    TileLinkControllerName = "Home",
                                     TileDisplayName = "Speakers",
                                     TileBackgroundCssClass = "singleTileGreenImage",
                                     DefaultTileIcon = this.defaultSingleIcon
@@ -139,8 +137,8 @@ namespace OCC.UI.Webhost.Controllers
         {
             var tileViewModel = new MetroTileViewModel
                                 {
-                                    TileLinkActionName = "Index",
-                                    TileLinkControllerName = "Volunteer",
+                                    TileLinkActionName = "Volunteers",
+                                    TileLinkControllerName = "Home",
                                     TileDisplayName = "Volunteers",
                                     TileBackgroundCssClass = "singleTileGreenImage",
                                     DefaultTileIcon = this.defaultSingleIcon

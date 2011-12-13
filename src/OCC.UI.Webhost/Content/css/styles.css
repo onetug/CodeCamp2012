@@ -1,0 +1,28 @@
+﻿.title
+{
+    font-family: Tahoma;
+    font-size: 16p;
+}
+
+.field-name
+{
+    font-family: Tahoma;
+    font-size: 10p;
+    color: Gray;
+}
+
+.field-value
+{
+    font-family: Tahoma;
+    font-size: 12p;
+}
+
+a.field-name, a.field-name:visited, a.field-name:active
+{
+    text-decoration: none;
+}
+
+a.field-name:hover
+{
+    text-decoration: underline;
+}

@@ -1,4 +1,6 @@
-﻿@model OCC.UI.Webhost.Models.HomeModel
+﻿@using OCC.UI.Webhost.Models;
+
+@model List<Announcement>
 
 @{
     ViewBag.Title = "Home Page";
@@ -6,7 +8,7 @@
 
 <div>
 
-@foreach (var announcement in ViewData.Model.Announcements)
+@foreach (var announcement in ViewData.Model)
 {
     <div>
         <div><h3>@announcement.Title</h3></div>

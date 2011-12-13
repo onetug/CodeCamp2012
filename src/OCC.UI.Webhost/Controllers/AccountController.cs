@@ -29,8 +29,8 @@
         {
             if (ModelState.IsValid)
             {
-                Person authenticatedPerson = null;
-                Person person = service.FindPersonByEmail(model.Email);
+                OCC.UI.Webhost.CodeCampService.Person authenticatedPerson = null;
+                OCC.UI.Webhost.CodeCampService.Person person = service.FindPersonByEmail(model.Email);
                 if (person == null)
                 {
                     ModelState.AddModelError("", "");
@@ -90,7 +90,7 @@
                 var hash = 
                     UserNamePasswordHashProvider.GenerateUserNamePasswordHash(model.Email, model.Password);
                 
-                var newPerson = new Person()
+                var newPerson = new OCC.UI.Webhost.CodeCampService.Person()
                                     {
                                         Email = model.Email, 
                                         PasswordHash = hash, 

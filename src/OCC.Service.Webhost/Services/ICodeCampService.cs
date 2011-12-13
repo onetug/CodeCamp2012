@@ -41,6 +41,13 @@
         [OperationContract]
         void UpdateEvent(Event _event);
 
+        // Track
+        [OperationContract]
+        IList<Track> GetTracks(int idEvent);
+
+        [OperationContract]
+        Track GetTrack(int id);
+
         // ...
 
         [OperationContract]
@@ -51,6 +58,9 @@
 
         [OperationContract]
         IList<Person> GetSpeakers(int idEvent);
+
+        [OperationContract]
+        IList<Person> GetVolunteers(int idEvent);
 
         [OperationContract]
         IList<Sponsor> GetSponsors(int idEvent);

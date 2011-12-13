@@ -1,0 +1,24 @@
+﻿@using OCC.UI.Webhost.Models
+
+@model List<Track>
+
+@{
+    ViewBag.Title = "Agenda";
+}
+
+<div>
+    <h3>Agenda</h3>
+
+    @foreach (var track in ViewData.Model)
+    {
+        <div>
+            <h3>@track.Name</h3>
+            @foreach (var sessions in track.Sessions)
+            {
+                <div>
+                    <h4>@sessions.Name</h4>
+                </div>
+            }
+        </div>
+    }
+</div>

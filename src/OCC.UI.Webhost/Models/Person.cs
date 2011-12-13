@@ -1,9 +1,6 @@
 ﻿namespace OCC.UI.Webhost.Models
 {
-    using System;
-    using System.Collections.Generic;
-
-    public class Speaker
+    public class Person
     {
         public int ID { get; set; }
 
@@ -20,15 +17,5 @@
         public string Blog { get; set; }
 
         public string TwitterHandle { get; set; }
-    }
-
-    public class SpeakerViewModel
-    {
-        public IList<Speaker> Speakers { get; set; }
-
-        public SpeakerViewModel()
-        {
-            Speakers = new List<Speaker>();
-        }
     }
 }

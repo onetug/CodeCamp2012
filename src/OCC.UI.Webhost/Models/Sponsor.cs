@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace OCC.UI.Webhost.Models
+﻿namespace OCC.UI.Webhost.Models
 {
-    public class SponsorsViewModel
+    public class Sponsor
     {
         public int ID { get; set; }
 
