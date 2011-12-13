@@ -8,7 +8,7 @@ namespace OCC.UI.Webhost.Controllers
 
     using OCC.UI.Webhost.Models;
 
-    public class SpeakersController : AbstractController
+    public class SpeakersController : BaseController
     {
         //
         // GET: /Speakers/

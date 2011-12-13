@@ -11,21 +11,18 @@
     //
     // GET: /Home/
 
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public ActionResult Index(int eventid)
         {
             HomeModel model = new HomeModel();
 
-            using (CodeCampService.CodeCampServiceClient client = new CodeCampService.CodeCampServiceClient())
-            {
-                var e = client.GetEvent(eventid);
-                ViewBag.Message = e.Name;
+            var event_ = service.GetEvent(eventid);
+            ViewBag.Message = event_.Name;
 
-                var announcements = client.GetAnnouncements(eventid);
-                foreach (var a in announcements)
-                    model.Announcements.Add(new AnnouncementViewModel { Title = a.Title, Subtitle = a.Subtitle, Content = a.Content });
-            }
+            var announcements = service.GetAnnouncements(eventid);
+            foreach (var a in announcements)
+                model.Announcements.Add(new AnnouncementViewModel { Title = a.Title, Subtitle = a.Subtitle, Content = a.Content });
 
             return View(model);
         }

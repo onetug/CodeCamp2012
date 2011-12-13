@@ -3,12 +3,14 @@
     using System;
     using System.Web.Mvc;
     using System.Web.Security;
+
     using OCC.UI.Webhost.CodeCampService;
     using OCC.UI.Webhost.Infrastructure;
     using OCC.UI.Webhost.Models;
+
     using HashProvider = OCC.UI.Webhost.Infrastructure.UserNamePasswordHashProvider;
 
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
 
         //
@@ -27,31 +29,26 @@
         {
             if (ModelState.IsValid)
             {
-                using (var svc = new CodeCampServiceClient())
+                Person authenticatedPerson = null;
+                Person person = service.FindPersonByEmail(model.Email);
+                if (person == null)
                 {
-                    Person authenticatedPerson = null;
-                    Person person = svc.FindPersonByEmail(model.Email);
-                    if (person == null)
-                    {
-                        ModelState.AddModelError("", "");
-                        return View(model); //RedirectToAction("LogOn", "Account");
-                    }
-                    else
-                    {
-                        person.PasswordHash = HashProvider.GenerateUserNamePasswordHash(model.Email, model.Password);
-                        authenticatedPerson = svc.Login(person);
+                    ModelState.AddModelError("", "");
+                    return View(model); //RedirectToAction("LogOn", "Account");
+                }
+                else
+                {
+                    person.PasswordHash = HashProvider.GenerateUserNamePasswordHash(model.Email, model.Password);
+                    authenticatedPerson = service.Login(person);
+                }
 
-                    }
-
-                    if (authenticatedPerson != null)
-                    {
-                        return RedirectToAction("Index", "Home");
-
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("", "The user name or password provided is incorrect.");
-                    }
+                if (authenticatedPerson != null)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "The user name or password provided is incorrect.");
                 }
             }
             return View(model); 
@@ -101,10 +98,7 @@
                                         Twitter = model.Twitter
                                     };
                 
-                using (var client = new CodeCampServiceClient())
-                {
-                    client.RegisterPerson(newPerson);
-                }
+                service.RegisterPerson(newPerson);
 
                 return RedirectToAction("Index", "Home");
             }

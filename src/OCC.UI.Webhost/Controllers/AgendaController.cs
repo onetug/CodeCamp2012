@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace OCC.UI.Webhost.Controllers
+﻿namespace OCC.UI.Webhost.Controllers
 {
-    public class AgendaController : Controller
+    using System;
+    using System.Web.Mvc;
+
+    public class AgendaController : BaseController
     {
         //
         // GET: /Agenda/

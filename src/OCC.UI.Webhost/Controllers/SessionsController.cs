@@ -11,7 +11,7 @@ namespace OCC.UI.Webhost.Controllers
     //
     // GET: /Sessions/
 
-    public class SessionsController : AbstractController
+    public class SessionsController : BaseController
     {
 
         public ActionResult Index(int eventid)
