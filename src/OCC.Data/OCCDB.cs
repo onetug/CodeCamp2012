@@ -21,10 +21,10 @@
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Announcement>()
-                .HasRequired(a => a.Event)
-                .WithMany(e => e.Announcements)
-                .HasForeignKey(a => a.FK_Event);
+            //modelBuilder.Entity<Announcement>()
+            //    .HasRequired(a => a.Event)
+            //    .WithMany(e => e.Announcements)
+            //    .HasForeignKey(a => a.FK_Event);
 
             Database.SetInitializer<OCCDB>(new OCCDBInitializer());
         }

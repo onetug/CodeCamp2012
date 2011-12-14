@@ -47,11 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Announcement.cs" />
+    <Compile Include="EventAttendee.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="OCCDB.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Session.cs" />
+    <Compile Include="SessionAttendee.cs" />
     <Compile Include="Sponsor.cs" />
     <Compile Include="Track.cs" />
   </ItemGroup>
