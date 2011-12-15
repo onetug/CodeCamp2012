@@ -12,10 +12,12 @@
 
         public string Bio { get; set; }
 
-        public string WebSite { get; set; }
+        public string Website { get; set; }
 
         public string Blog { get; set; }
 
-        public string TwitterHandle { get; set; }
+        public string Twitter { get; set; }
+
+        public string ImageUrl { get; set; }
     }
 }

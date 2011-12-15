@@ -4,7 +4,7 @@
     using System.Runtime.Serialization;
 
     [DataContract]
-    public class Person
+    public class Speaker
     {
         [DataMember]
         public int ID { get; set; }
@@ -13,10 +13,7 @@
         public string Email { get; set; }
 
         [DataMember]
-        public string FirstName { get; set; }
-
-        [DataMember]
-        public string LastName { get; set; }
+        public string Name { get; set; }
 
         [DataMember]
         public string Title { get; set; }
@@ -37,9 +34,11 @@
         public string ImageUrl { get; set; }
 
         [DataMember]
-        public bool IsAdmin { get; set; }
+        public IList<Session> Sessions { get; set; }
 
-        [DataMember]
-        public string PasswordHash { get; set; }
+        public Speaker()
+        {
+            Sessions = new List<Session>();
+        }
     }
 }

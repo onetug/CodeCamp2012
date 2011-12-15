@@ -68,6 +68,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MetroTileController.cs" />
+    <Compile Include="Controllers\SessionController.cs" />
     <Compile Include="Controllers\SpeakerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -79,6 +80,7 @@
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\LayoutViewModel.cs" />
     <Compile Include="Models\MetroTileViewModel.cs" />
+    <Compile Include="Models\OCC\UI\WebhostContext.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Session.cs" />
     <Compile Include="Models\Speaker.cs" />
@@ -305,6 +307,9 @@
     <None Include="Service References\CodeCampService\OCC.UI.Webhost.CodeCampService.Session.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\CodeCampService\OCC.UI.Webhost.CodeCampService.Speaker.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\CodeCampService\OCC.UI.Webhost.CodeCampService.Sponsor.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -361,9 +366,8 @@
     <Content Include="Views\Home\Sponsors.cshtml" />
     <Content Include="Views\Home\Venue.cshtml" />
     <Content Include="Views\Home\Volunteers.cshtml" />
-    <Content Include="Views\Speaker\Create.cshtml" />
-    <Content Include="Views\Speaker\Edit.cshtml" />
-    <Content Include="Views\Speaker\Index.cshtml" />
+    <Content Include="Views\Session\Details.cshtml" />
+    <Content Include="Views\Speaker\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

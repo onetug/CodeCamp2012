@@ -9,5 +9,7 @@
         public string Description { get; set; }
 
         public string Speaker { get; set; }
+
+        public int SpeakerID { get; set; }
     }
 }

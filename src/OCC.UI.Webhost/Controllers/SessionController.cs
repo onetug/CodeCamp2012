@@ -4,10 +4,10 @@
 
     using OCC.UI.Webhost.Models;
 
-    public class SpeakerController : BaseController
+    public class SessionController : BaseController
     {
         //
-        // GET: /Speaker/
+        // GET: /Session/
 
         public ActionResult Index()
         {
@@ -15,30 +15,26 @@
         }
 
         //
-        // GET: /Speaker/Details/5
+        // GET: /Session/Details/5
 
         public ActionResult Details(int id)
         {
-            var speaker = service.GetSpeaker(id);
+            var session = service.GetSession(id);
 
-            Speaker model = new Speaker()
+            Session model = new Session()
             {
-                ID = speaker.ID,
-                Email = speaker.Email,
-                Name = speaker.Name,
-                Title = speaker.Title,
-                Bio = speaker.Bio,
-                Website = speaker.Website,
-                Blog = speaker.Blog,
-                Twitter = speaker.Twitter,
-                ImageUrl = speaker.ImageUrl
+                ID = session.ID,
+                Name = session.Name,
+                Description = session.Description,
+                Speaker = session.Speaker,
+                SpeakerID = session.SpeakerID
             };
 
             return View(model);
         }
 
         //
-        // GET: /Speaker/Create
+        // GET: /Session/Create
 
         public ActionResult Create()
         {
@@ -46,7 +42,7 @@
         } 
 
         //
-        // POST: /Speaker/Create
+        // POST: /Session/Create
 
         [HttpPost]
         public ActionResult Create(FormCollection collection)
@@ -64,18 +60,15 @@
         }
         
         //
-        // GET: /Speaker/Edit/5
+        // GET: /Session/Edit/5
  
         public ActionResult Edit(int id)
         {
-            // TODO: var speaker = service.GetSpeaker(id);
-            // TODO: return View(speaker);
-
             return View();
         }
 
         //
-        // POST: /Speaker/Edit/5
+        // POST: /Session/Edit/5
 
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
@@ -93,7 +86,7 @@
         }
 
         //
-        // GET: /Speaker/Delete/5
+        // GET: /Session/Delete/5
  
         public ActionResult Delete(int id)
         {
@@ -101,7 +94,7 @@
         }
 
         //
-        // POST: /Speaker/Delete/5
+        // POST: /Session/Delete/5
 
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)

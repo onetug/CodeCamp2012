@@ -39,13 +39,24 @@
 
         public ActionResult Agenda(int eventid)
         {
-            var tracks = service.GetTracks(eventid); // TODO: GetTracksWithSessions
+            var tracks = service.GetTracksWithSessions(eventid);
 
             List<Track> model = new List<Track>();
             foreach (var track in tracks)
             {
-                model.Add(new Track() { ID = track.ID, Name = track.Name, Description = track.Description });
-                // TODO: copy sessions
+                Track t = new Track() { ID = track.ID, Name = track.Name, Description = track.Description };
+
+                foreach (var session in track.Sessions)
+                    t.Sessions.Add(new Session()
+                    {
+                        ID = session.ID,
+                        Name = session.Name,
+                        Description = session.Description,
+                        Speaker = session.Speaker,
+                        SpeakerID = session.SpeakerID
+                    });
+
+                model.Add(t);
             }
 
             //model.Add(new Track() { Name = "Track 1" });

@@ -19,7 +19,10 @@
         public string Description { get; set; }
 
         [DataMember]
-        public Person Speaker { get; set; }
+        public string Speaker { get; set; }
+
+        [DataMember]
+        public int SpeakerID { get; set; }
 
         [DataMember]
         public DateTime StartTime { get; set; }

@@ -71,12 +71,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Services\Announcement.cs" />
+    <Compile Include="Services\Attendee.cs" />
     <Compile Include="Services\Event.cs" />
     <Compile Include="Services\Person.cs" />
     <Compile Include="Services\Session.cs" />
     <Compile Include="Services\CodeCampService.svc.cs">
       <DependentUpon>CodeCampService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Services\Speaker.cs" />
     <Compile Include="Services\Sponsor.cs" />
     <Compile Include="Services\ICodeCampService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

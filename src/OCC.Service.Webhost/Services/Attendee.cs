@@ -4,7 +4,7 @@
     using System.Runtime.Serialization;
 
     [DataContract]
-    public class Person
+    public class Attendee
     {
         [DataMember]
         public int ID { get; set; }
@@ -40,6 +40,11 @@
         public bool IsAdmin { get; set; }
 
         [DataMember]
-        public string PasswordHash { get; set; }
+        public IList<Session> Agenda { get; set; }
+
+        public Attendee()
+        {
+            Agenda = new List<Session>();
+        }
     }
 }

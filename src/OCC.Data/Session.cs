@@ -16,9 +16,11 @@
 
         public Person Speaker { get; set; }
 
-        public DateTime StartTime { get; set; }
+        // public DateTime StartTime { get; set; }
 
-        public DateTime EndTime { get; set; }
+        // public DateTime EndTime { get; set; }
+
+        public int Level { get; set; }
 
         [StringLength(100)]
         public string Location { get; set; }

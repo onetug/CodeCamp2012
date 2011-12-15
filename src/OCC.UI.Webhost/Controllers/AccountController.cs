@@ -94,7 +94,7 @@
                                     {
                                         Email = model.Email, 
                                         PasswordHash = hash, 
-                                        Agenda = new OCC.UI.Webhost.CodeCampService.Session[0],
+                                        // Agenda = new OCC.UI.Webhost.CodeCampService.Session[0],
                                         Twitter = model.Twitter
                                     };
                 

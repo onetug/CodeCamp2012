@@ -2,7 +2,6 @@
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OCC.Service.Webhost.Services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:complexType name="Person">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Agenda" nillable="true" type="tns:ArrayOfSession" />
       <xs:element minOccurs="0" name="Bio" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Blog" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
@@ -18,25 +17,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Person" nillable="true" type="tns:Person" />
-  <xs:complexType name="ArrayOfSession">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Session" nillable="true" type="tns:Session" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfSession" nillable="true" type="tns:ArrayOfSession" />
-  <xs:complexType name="Session">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="ID" type="xs:int" />
-      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Speaker" nillable="true" type="tns:Person" />
-      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Track" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Session" nillable="true" type="tns:Session" />
   <xs:complexType name="ArrayOfEvent">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Event" nillable="true" type="tns:Event" />
@@ -118,4 +98,39 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Track" nillable="true" type="tns:Track" />
+  <xs:complexType name="ArrayOfSession">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Session" nillable="true" type="tns:Session" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSession" nillable="true" type="tns:ArrayOfSession" />
+  <xs:complexType name="Session">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Speaker" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpeakerID" type="xs:int" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Track" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Session" nillable="true" type="tns:Session" />
+  <xs:complexType name="Speaker">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Blog" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sessions" nillable="true" type="tns:ArrayOfSession" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Twitter" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Website" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Speaker" nillable="true" type="tns:Speaker" />
 </xs:schema>

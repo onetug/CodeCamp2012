@@ -109,6 +109,15 @@
 
         // Track
 
+        public Track GetTrack(int id)
+        {
+            using (OCCDB db = new OCCDB())
+            {
+                var t = db.Tracks.Find(id);
+                return t.AsTrack();
+            }
+        }
+
         public IList<Track> GetTracks(int eventId)
         {
             using (OCCDB db = new OCCDB())
@@ -126,15 +135,56 @@
             }
         }
 
-        public Track GetTrack(int id)
+        public IList<Track> GetTracksWithSessions(int eventId)
         {
             using (OCCDB db = new OCCDB())
             {
-                var t = db.Tracks.Find(id);
-                return t.AsTrack();
+                var e = (from x in db.Events.Include("Tracks.Sessions.Speaker")// .Include("Tracks.Sessions.Speaker")
+                         where x.ID == eventId
+                         select x).FirstOrDefault();
+
+                if (e == null)
+                    throw new ArgumentException("Event not found");
+
+                List<Track> result = new List<Track>();
+                foreach (var track in e.Tracks)
+                    result.Add(track.AsTrackWithSessions());
+
+                return result;
             }
         }
 
+        // Session
+
+        public Session GetSession(int id)
+        {
+            using (OCCDB db = new OCCDB())
+            {
+                var s = (from x in db.Sessions.Include("Speaker")
+                         where x.ID == id
+                         select x).FirstOrDefault();
+
+                if (s == null) throw new ArgumentException("Session not found");
+
+                return s.AsSession();
+            }
+        }
+
+        // Speaker
+
+        public Speaker GetSpeaker(int id)
+        {
+            using (OCCDB db = new OCCDB())
+            {
+                var s = (from x in db.People
+                         where x.ID == id
+                         select x).FirstOrDefault();
+
+                if (s == null) throw new ArgumentException("Session not found");
+
+                return s.AsSpeaker();
+            }
+        }
 
         // ... 
 

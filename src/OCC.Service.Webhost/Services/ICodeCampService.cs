@@ -42,11 +42,25 @@
         void UpdateEvent(Event _event);
 
         // Track
+
+        [OperationContract]
+        Track GetTrack(int id);
+
         [OperationContract]
         IList<Track> GetTracks(int idEvent);
 
         [OperationContract]
-        Track GetTrack(int id);
+        IList<Track> GetTracksWithSessions(int idEvent);
+
+        // Session
+
+        [OperationContract]
+        Session GetSession(int id);
+
+        // Speaker
+
+        [OperationContract]
+        Speaker GetSpeaker(int id);
 
         // ...
 

@@ -64,5 +64,56 @@
 
             return track;
         }
+
+        public static Track AsTrackWithSessions(this OCC.Data.Track t)
+        {
+            Track track = new Track()
+            {
+                ID = t.ID,
+                Name = t.Name,
+                Description = t.Description
+            };
+
+            foreach (var sesion in t.Sessions)
+                track.Sessions.Add(sesion.AsSession());
+
+            return track;
+        }
+
+        public static Session AsSession(this OCC.Data.Session s)
+        {
+            Session session = new Session()
+            {
+                ID = s.ID,
+                Name = s.Name,
+                Description = s.Description,
+                Location = s.Location,
+                Speaker = s.Speaker.FirstName + " " + s.Speaker.LastName,
+                SpeakerID = s.Speaker.ID
+                // starttime, endtime, level
+            };
+
+            return session;
+        }
+
+        public static Speaker AsSpeaker(this OCC.Data.Person p)
+        {
+            Speaker speaker = new Speaker()
+            {
+                ID = p.ID,
+                Email = p.Email,
+                Name = p.FirstName + " " + p.LastName,
+                Title = p.Title,
+                Bio = p.Bio,
+                Website = p.Website,
+                Blog = p.Blog,
+                Twitter = p.Twitter,
+                ImageUrl = p.ImageUrl
+            };
+
+            // TODO: copy sessions
+
+            return speaker;
+        }
     }
 }

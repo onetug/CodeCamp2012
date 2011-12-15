@@ -17,5 +17,10 @@
 
         [DataMember]
         public virtual IList<Session> Sessions { get; set; }
+
+        public Track()
+        {
+            Sessions = new List<Session>();
+        }
     }
 }

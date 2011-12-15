@@ -6,19 +6,27 @@
     ViewBag.Title = "Agenda";
 }
 
-<div>
-    <h3>Agenda</h3>
+<h3>Agenda</h3>
 
-    @foreach (var track in ViewData.Model)
+<ul>
+
+@foreach (var track in ViewData.Model)
+{
+    <li>@track.Name</li>
+    
+    <ul>
+
+    @foreach (var session in track.Sessions)
     {
-        <div>
-            <h3>@track.Name</h3>
-            @foreach (var sessions in track.Sessions)
-            {
-                <div>
-                    <h4>@sessions.Name</h4>
-                </div>
-            }
-        </div>
+        @*<li>@session.Name - @session.Speaker</li>*@
+        <li>
+            @Html.ActionLink(session.Name, "Details", "Session", new { session.ID }, null)  
+            - 
+            @Html.ActionLink(session.Speaker, "Details", "Speaker", new { session.SpeakerID }, null)  
+        </li>
     }
-</div>
+
+    </ul>
+}
+
+</ul>
