@@ -8,11 +8,9 @@
 
 <h3>Agenda</h3>
 
-<ul>
-
 @foreach (var track in ViewData.Model)
 {
-    <li>@track.Name</li>
+    <h4>@track.Name</h4>
     
     <ul>
 
@@ -20,13 +18,11 @@
     {
         @*<li>@session.Name - @session.Speaker</li>*@
         <li>
-            @Html.ActionLink(session.Name, "Details", "Session", new { session.ID }, null)  
+            @Html.ActionLink(session.Name, "Details", "Session", new { id = session.ID }, null)  
             - 
-            @Html.ActionLink(session.Speaker, "Details", "Speaker", new { session.SpeakerID }, null)  
+            @Html.ActionLink(session.Speaker, "Details", "Speaker", new { id = session.SpeakerID }, null)  
         </li>
     }
 
     </ul>
 }
-
-</ul>
