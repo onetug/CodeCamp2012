@@ -1,13 +1,13 @@
 ﻿.title
 {
     font-family: Tahoma;
-    font-size: 16p;
+    font-size: 16px;
 }
 
 .subtitle
 {
     font-family: Tahoma;
-    font-size: 8p;
+    font-size: 8px;
     font-style: italic;
     padding-left: 50;
 }
@@ -15,14 +15,14 @@
 .field-name
 {
     font-family: Tahoma;
-    font-size: 10p;
+    font-size: 10px;
     color: Gray;
 }
 
 .field-value
 {
     font-family: Tahoma;
-    font-size: 12p;
+    font-size: 12px;
 }
 
 a.field-name, a.field-name:visited, a.field-name:active
