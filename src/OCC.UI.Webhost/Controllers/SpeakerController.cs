@@ -11,7 +11,7 @@
 
         public ActionResult Index()
         {
-            return View();
+            return View("Details");
         }
 
         //
@@ -42,7 +42,7 @@
 
         public ActionResult Create()
         {
-            return View();
+            return View("Details");
         } 
 
         //
@@ -59,7 +59,7 @@
             }
             catch
             {
-                return View();
+                return View("Details");
             }
         }
         
@@ -71,7 +71,7 @@
             // TODO: var speaker = service.GetSpeaker(id);
             // TODO: return View(speaker);
 
-            return View();
+            return View("Details");
         }
 
         //
@@ -88,7 +88,7 @@
             }
             catch
             {
-                return View();
+                return View("Details");
             }
         }
 
@@ -97,7 +97,7 @@
  
         public ActionResult Delete(int id)
         {
-            return View();
+            return View("Details");
         }
 
         //
@@ -114,7 +114,7 @@
             }
             catch
             {
-                return View();
+                return View("Details");
             }
         }
     }
