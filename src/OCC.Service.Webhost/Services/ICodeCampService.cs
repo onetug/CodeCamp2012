@@ -47,6 +47,15 @@
         Track GetTrack(int id);
 
         [OperationContract]
+        void AddTrack(Track track);
+
+        [OperationContract]
+        void UpdateTrack(Track track);
+
+        [OperationContract]
+        void DeleteTrack(int id);
+
+        [OperationContract]
         IList<Track> GetTracks(int idEvent);
 
         [OperationContract]

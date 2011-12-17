@@ -7,6 +7,11 @@
     {
         public int ID { get; set; }
 
+        [ForeignKey("Event")]
+        public int EventID { get; set; }
+
+        public Event Event { get; set; }
+
         [StringLength(100)]
         public string Name { get; set; }
 
