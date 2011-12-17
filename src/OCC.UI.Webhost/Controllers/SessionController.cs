@@ -11,7 +11,7 @@
 
         public ActionResult Index()
         {
-            return View();
+            return View("Details");
         }
 
         //
@@ -38,7 +38,7 @@
 
         public ActionResult Create()
         {
-            return View();
+            return View("Details");
         } 
 
         //
@@ -55,7 +55,7 @@
             }
             catch
             {
-                return View();
+                return View("Details");
             }
         }
         
@@ -64,7 +64,7 @@
  
         public ActionResult Edit(int id)
         {
-            return View();
+            return View("Details");
         }
 
         //
@@ -81,7 +81,7 @@
             }
             catch
             {
-                return View();
+                return View("Details");
             }
         }
 
@@ -90,7 +90,7 @@
  
         public ActionResult Delete(int id)
         {
-            return View();
+            return View("Details");
         }
 
         //
@@ -107,7 +107,7 @@
             }
             catch
             {
-                return View();
+                return View("Details");
             }
         }
     }
