@@ -3,17 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using OCC.UI.Webhost.Models;
 
 namespace OCC.UI.Webhost.Controllers
 {
-    public class TrackController : Controller
+    public class TrackController : BaseController
     {
         //
         // GET: /Track/
 
-        public ActionResult Index()
+        public ActionResult Index(int eventID)
         {
-            return View();
+            var tracks = service.GetTracks(eventID);
+
+            List<Track> model = new List<Track>();
+            foreach (var track in tracks)
+                model.Add(new Track() { ID = track.ID, Name = track.Name, Description = track.Description });
+
+            return View(model);
         }
 
         //
@@ -21,7 +28,11 @@ namespace OCC.UI.Webhost.Controllers
 
         public ActionResult Details(int id)
         {
-            return View();
+            var track = service.GetTrack(id);
+
+            Track model = new Track() { ID = track.ID, Name = track.Name, Description = track.Description };
+
+            return View(model);
         }
 
         //
