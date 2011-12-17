@@ -43,6 +43,8 @@
 
         public virtual ICollection<Track> Tracks { get; set; }
 
+        public virtual ICollection<Timeslot> Timeslots { get; set; }
+
         public virtual ICollection<Sponsor> Sponsors { get; set; }
 
         public virtual ICollection<EventAttendee> Attendees { get; set; }
@@ -50,8 +52,13 @@
         public Event()
         {
             Announcements = new List<Announcement>();
+
             Tracks = new List<Track>();
+            
+            Timeslots = new List<Timeslot>();
+            
             Sponsors = new List<Sponsor>();
+            
             Attendees = new List<EventAttendee>();
         }
     }

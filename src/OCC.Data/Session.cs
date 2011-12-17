@@ -8,6 +8,15 @@
     {
         public int ID { get; set; }
 
+        [ForeignKey("Track")]
+        public int TrackID { get; set; }
+
+        //[ForeignKey("Timeslot")]
+        //public int TimeslotID { get; set; }
+
+        [ForeignKey("Speaker")]
+        public int SpeakerID { get; set; }
+
         [StringLength(100)]
         public string Name { get; set; }
 
@@ -16,9 +25,9 @@
 
         public Person Speaker { get; set; }
 
-        // public DateTime StartTime { get; set; }
+        public Track Track { get; set; }
 
-        // public DateTime EndTime { get; set; }
+        //public Timeslot Timeslot { get; set; }
 
         public int Level { get; set; }
 

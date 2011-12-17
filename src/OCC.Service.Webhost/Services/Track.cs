@@ -10,6 +10,9 @@
         public int ID { get; set; }
 
         [DataMember]
+        public int EventID { get; set; }
+
+        [DataMember]
         public string Name { get; set; }
 
         [DataMember]

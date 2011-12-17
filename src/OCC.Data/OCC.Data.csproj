@@ -55,6 +55,7 @@
     <Compile Include="Session.cs" />
     <Compile Include="SessionAttendee.cs" />
     <Compile Include="Sponsor.cs" />
+    <Compile Include="Timeslot.cs" />
     <Compile Include="Track.cs" />
   </ItemGroup>
   <ItemGroup>

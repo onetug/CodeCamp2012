@@ -3,6 +3,7 @@
     using System;
     using System.Data.Entity;
     using System.Linq;
+    using System.Data.Entity.ModelConfiguration.Conventions;
 
     public class OCCDB : DbContext
     {
@@ -21,6 +22,8 @@
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();    
+
             //modelBuilder.Entity<Announcement>()
             //    .HasRequired(a => a.Event)
             //    .WithMany(e => e.Announcements)

@@ -102,9 +102,26 @@
             }
         }
 
-        public void UpdateEvent(Event _event)
+        public void UpdateEvent(Event event_)
         {
-            throw new NotImplementedException();
+            using (OCCDB db = new OCCDB())
+            {
+                var e = db.Events.Find(event_.ID);
+
+                e.Name = event_.Name;
+                e.Description  = event_.Description;
+                e.TwitterHashTag  = event_.TwitterHashTag;
+                e.StartTime  = event_.StartTime;
+                e.EndTime  = event_.EndTime;
+                e.Location  = event_.Location;
+                e.Address1  = event_.Address1;
+                e.Address2  = event_.Address2;
+                e.City  = event_.City;
+                e.State  = event_.State;
+                e.Zip = event_.Zip;
+
+                db.SaveChanges();
+            }
         }
 
         // Track
@@ -115,6 +132,51 @@
             {
                 var t = db.Tracks.Find(id);
                 return t.AsTrack();
+            }
+        }
+
+        public void AddTrack(Track track)
+        {
+            using (OCCDB db = new OCCDB())
+            {
+                Data.Track t = new Data.Track()
+                {
+                    EventID = track.EventID,
+                    Name = track.Name,
+                    Description = track.Description
+                };
+
+                db.Tracks.Add(t);
+
+                db.SaveChanges();
+            }
+        }
+
+        public void UpdateTrack(Track track)
+        {
+            using (OCCDB db = new OCCDB())
+            {
+                var t = db.Tracks.Find(track.ID);
+
+                t.Name = track.Name;
+                t.Description = track.Description;
+
+                db.SaveChanges();
+            }
+        }
+
+        public void DeleteTrack(int id)
+        {
+            using (OCCDB db = new OCCDB())
+            {
+                Data.Track track = (from t in db.Tracks.Include("Sessions") where t.ID == id select t).FirstOrDefault();
+
+                if (track.Sessions.Count > 0)
+                    throw new Exception("Can't delete a track that contains sessions!");
+
+                db.Tracks.Remove(track);
+
+                db.SaveChanges();
             }
         }
 
