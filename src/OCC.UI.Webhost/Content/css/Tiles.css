@@ -73,25 +73,16 @@
 	overflow: hidden;
 }
 
-#middleSingleTileContent a
-{
-	position: absolute;
-	height: 110px;
-	width: 128px;
-	top: 0px;
-	left: 0px;
-}
- 
 .doubleTile
 {
 	width: 290px;
- 	height: 140px;
- 	display: inline;
- 	float: left;
+	height: 140px;
+	display: inline;
+	float: left;
 	margin-left: 5px;
 	margin-right: 5px;
- 	margin-top: 5px;
- 	margin-bottom: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 	position: relative;
 	overflow: hidden;
 }
@@ -102,11 +93,11 @@
 	float: left;
 	margin: -1px 0px 0px 0px;
 }
- 
+
 .singleTileIcon
 {
- 	position: absolute;
- 	left: 46px;
+	position: absolute;
+	left: 46px;
 	top: 46px;
 }
 
@@ -125,6 +116,16 @@
 	width: 128px;
 	display: table;
 	position: static;
+}
+
+#middleSingleTileContent a
+{
+	position: absolute;
+	height: 116px;
+	width: 140px;
+	top: 0px;
+	left: 0px;
+	
 }
 
 #innerSingleTileContent
