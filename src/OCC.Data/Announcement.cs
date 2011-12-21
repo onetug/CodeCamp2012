@@ -1,5 +1,7 @@
 ﻿namespace OCC.Data
 {
+    //comment added by Brian
+    
     using System;
     // using System.Data.Entity.ModelConfiguration;
     using System.ComponentModel.DataAnnotations;
